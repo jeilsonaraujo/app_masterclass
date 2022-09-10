@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:app_masterclass/app/about/about_page.dart';
 import 'package:app_masterclass/app/activities/activities_page.dart';
-import 'package:app_masterclass/app/home/header_home_page_widget.dart';
 import 'package:app_masterclass/app/repositories/repositories_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,20 +14,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final List<Widget> tabsPages = [
+    const ActivitiesPage(),
+    const RepositoriesPage(),
+    const AboutPage(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
         animationDuration: const Duration(milliseconds: 200),
-        length: 3,
+        length: tabsPages.length,
         child: Scaffold(
-          appBar: const HeaderHomePageWidget(),
           bottomNavigationBar: menu(),
-          body: const TabBarView(
-            children: [
-              ActivitiesPage(),
-              RepositoriesPage(),
-              AboutPage(),
-            ],
+          body: TabBarView(
+            children: tabsPages,
           ),
         ));
   }

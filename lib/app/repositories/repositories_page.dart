@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:app_masterclass/components/header_page_widget.dart';
+
 class RepositoriesPage extends StatefulWidget {
   const RepositoriesPage({Key? key}) : super(key: key);
 
@@ -10,6 +12,8 @@ class RepositoriesPage extends StatefulWidget {
 class _RepositoriesPageState extends State<RepositoriesPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: HeaderPageWidget(title: 'Repositórios'),
+    );
   }
 }
