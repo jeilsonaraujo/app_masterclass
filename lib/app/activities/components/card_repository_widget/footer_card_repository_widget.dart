@@ -40,9 +40,9 @@ class _FooterCardRepositoryWidgetState
             child: Container(
               width: 120,
               height: 35,
-              decoration: const BoxDecoration(
-                color: Color(0xFF055AA3),
-                borderRadius: BorderRadius.all(
+              decoration: BoxDecoration(
+                color: Theme.of(context).primaryColor,
+                borderRadius: const BorderRadius.all(
                   Radius.circular(25),
                 ),
               ),

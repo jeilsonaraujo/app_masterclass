@@ -34,19 +34,21 @@ class _MyAppWidgetState extends State<MyAppWidget> {
 }
 
 ThemeData _lightTheme = ThemeData(
+  brightness: Brightness.light,
+  primaryColor: const Color(0xFF055AA3),
   backgroundColor: const Color(0xFFD6DFE4),
   scaffoldBackgroundColor: const Color(0xFFD6DFE4),
   indicatorColor: Colors.black,
   canvasColor: Colors.white,
   cardColor: const Color(0xFFEDF4F8),
-  brightness: Brightness.light,
 );
 
 ThemeData _darkTheme = ThemeData(
+  brightness: Brightness.dark,
+  primaryColor: const Color(0xFF055AA3),
   backgroundColor: const Color(0xFF121517),
   scaffoldBackgroundColor: const Color(0xFF121517),
   indicatorColor: Colors.white,
   canvasColor: Colors.black,
   cardColor: const Color(0xFF172026),
-  brightness: Brightness.dark,
 );

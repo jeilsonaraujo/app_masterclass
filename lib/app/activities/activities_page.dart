@@ -33,17 +33,30 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) => const DetailsPage(
                       title: 'Animações',
+                      amountOfExercises: 4,
                     ),
                   ),
                 );
               },
             ),
-            // CardRepositoryWidget(
-            //     icon: FontAwesomeIcons.glasses,
-            //     title: 'Leitura de Mockup',
-            //     amountOfExercises: '2',
-            //     content:
-            //         'Aplicação da tecnica de leitura de mockup, contendo 2 exercicios'),
+            CardRepositoryWidget(
+              icon: FontAwesomeIcons.glasses,
+              title: 'Leitura de Mockup',
+              amountOfExercises: '2',
+              content:
+                  'Aplicação da tecnica de leitura de mockup, contendo 2 exercicios',
+              navigateTo: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const DetailsPage(
+                      title: 'Leitura de Mockup',
+                      amountOfExercises: 2,
+                    ),
+                  ),
+                );
+              },
+            ),
             // CardRepositoryWidget(
             //     icon: FontAwesomeIcons.markdown,
             //     title: 'Leitura de Mockup',
