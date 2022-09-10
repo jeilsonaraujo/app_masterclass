@@ -6,7 +6,12 @@ import 'package:app_masterclass/app/theme_controller.dart';
 
 class HeaderPageWidget extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  const HeaderPageWidget({super.key, required this.title});
+  bool isDetailPage;
+  HeaderPageWidget({
+    super.key,
+    required this.title,
+    this.isDetailPage = false,
+  });
   final double height = 120.0;
   @override
   Widget build(BuildContext context) {
@@ -25,14 +30,24 @@ class HeaderPageWidget extends StatelessWidget implements PreferredSizeWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 4.0),
-                      child: Image.asset(
-                        'assets/logo.png',
-                        height: 44,
-                        width: 44,
+                    if (isDetailPage)
+                      Padding(
+                          padding: const EdgeInsets.only(right: 4.0),
+                          child: IconButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: const Icon(Icons.arrow_back_ios, size: 28),
+                          ))
+                    else
+                      Padding(
+                        padding: const EdgeInsets.only(right: 4.0),
+                        child: Image.asset(
+                          'assets/logo.png',
+                          height: 44,
+                          width: 44,
+                        ),
                       ),
-                    ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
