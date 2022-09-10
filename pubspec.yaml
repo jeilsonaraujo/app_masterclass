@@ -63,6 +63,7 @@ flutter:
     - assets/logo.png
     - assets/material-toys/Icon material-toys.png
     - assets/feather-target/Icon feather-target.png
+    - assets/simple-flutter/Icon simple-flutter.png
    
 
   # An image asset can refer to one or more resolution-specific "variants", see
