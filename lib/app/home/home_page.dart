@@ -33,11 +33,15 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget menu() {
+    bool isPortraitMode =
+        MediaQuery.of(context).orientation == Orientation.portrait;
     return Container(
       color: Theme.of(context).backgroundColor,
       child: TabBar(
-        indicator:
-            CircleTabIndicator(color: Theme.of(context).cardColor, radius: 20),
+        indicator: CircleTabIndicator(
+            color: Theme.of(context).cardColor,
+            radius: 20,
+            isPortraitMode: isPortraitMode),
         labelColor: Theme.of(context).indicatorColor,
         tabs: [
           Tab(
@@ -64,18 +68,22 @@ class _HomePageState extends State<HomePage> {
 class CircleTabIndicator extends Decoration {
   final BoxPainter _painter;
 
-  CircleTabIndicator({required Color color, required double radius})
-      : _painter = _CirclePainter(color, radius);
+  CircleTabIndicator(
+      {required Color color,
+      required double radius,
+      required bool isPortraitMode})
+      : _painter = _CirclePainter(color, radius, isPortraitMode);
 
   @override
   BoxPainter createBoxPainter([VoidCallback? onChanged]) => _painter;
 }
 
 class _CirclePainter extends BoxPainter {
+  final bool isPortraitMode;
   final Paint _paint;
   final double radius;
 
-  _CirclePainter(Color color, this.radius)
+  _CirclePainter(Color color, this.radius, this.isPortraitMode)
       : _paint = Paint()
           ..color = color
           ..isAntiAlias = true;
@@ -83,10 +91,10 @@ class _CirclePainter extends BoxPainter {
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration cfg) {
     double dx = 0.0;
-    if (offset.dx > 250) {
-      dx = offset.dx * 0.18;
+    if (isPortraitMode) {
+      dx = offset.dx + 33;
     } else {
-      dx = offset.dx * 0.128;
+      dx = offset.dx + 80;
     }
     final dy = offset.dy + 5;
     const radius = 50.0;
