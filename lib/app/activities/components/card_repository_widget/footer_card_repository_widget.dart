@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FooterCardRepositoryWidget extends StatefulWidget {
-  const FooterCardRepositoryWidget({Key? key}) : super(key: key);
+  final void Function() navigateTo;
+  const FooterCardRepositoryWidget({super.key, required this.navigateTo});
 
   @override
   State<FooterCardRepositoryWidget> createState() =>
@@ -34,22 +35,25 @@ class _FooterCardRepositoryWidgetState
               ),
             ],
           ),
-          Container(
-            width: 120,
-            height: 35,
-            decoration: const BoxDecoration(
-              color: Color(0xFF055AA3),
-              borderRadius: BorderRadius.all(
-                Radius.circular(25),
+          GestureDetector(
+            onTap: widget.navigateTo,
+            child: Container(
+              width: 120,
+              height: 35,
+              decoration: const BoxDecoration(
+                color: Color(0xFF055AA3),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(25),
+                ),
               ),
-            ),
-            child: const Align(
-              alignment: Alignment.center,
-              child: Text(
-                'Ver mais',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 12,
+              child: const Align(
+                alignment: Alignment.center,
+                child: Text(
+                  'Ver mais',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                  ),
                 ),
               ),
             ),

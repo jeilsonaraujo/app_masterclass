@@ -1,3 +1,4 @@
+import 'package:app_masterclass/app/activities/details/details_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -19,43 +20,54 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
       padding: const EdgeInsets.only(left: 15, right: 15),
       child: SingleChildScrollView(
         child: Column(
-          children: const [
+          children: [
             CardRepositoryWidget(
-                icon: FontAwesomeIcons.personRunning,
-                title: 'Animações',
-                amountOfExercises: '4',
-                content:
-                    'Estudos sobre animações implícitas e controladas, contendo 4 exercícios e 2 estudos.'),
-            CardRepositoryWidget(
-                icon: FontAwesomeIcons.glasses,
-                title: 'Leitura de Mockup',
-                amountOfExercises: '2',
-                content:
-                    'Aplicação da tecnica de leitura de mockup, contendo 2 exercicios'),
-            CardRepositoryWidget(
-                icon: FontAwesomeIcons.markdown,
-                title: 'Leitura de Mockup',
-                amountOfExercises: '2',
-                content:
-                    'Aplicação da tecnica de leitura de mockup, contendo 2 exercicios'),
-            CardRepositoryWidget(
-                icon: FontAwesomeIcons.glasses,
-                title: 'Leitura de Mockup',
-                amountOfExercises: '2',
-                content:
-                    'Aplicação da tecnica de leitura de mockup, contendo 2 exercicios'),
-            CardRepositoryWidget(
-                icon: FontAwesomeIcons.glasses,
-                title: 'Leitura de Mockup',
-                amountOfExercises: '2',
-                content:
-                    'Aplicação da tecnica de leitura de mockup, contendo 2 exercicios'),
-            CardRepositoryWidget(
-                icon: FontAwesomeIcons.glasses,
-                title: 'Leitura de Mockup',
-                amountOfExercises: '2',
-                content:
-                    'Aplicação da tecnica de leitura de mockup, contendo 2 exercicios'),
+              icon: FontAwesomeIcons.personRunning,
+              title: 'Animações',
+              amountOfExercises: '4',
+              content:
+                  'Estudos sobre animações implícitas e controladas, contendo 4 exercícios e 2 estudos.',
+              navigateTo: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const DetailsPage(
+                      title: 'Animações',
+                    ),
+                  ),
+                );
+              },
+            ),
+            // CardRepositoryWidget(
+            //     icon: FontAwesomeIcons.glasses,
+            //     title: 'Leitura de Mockup',
+            //     amountOfExercises: '2',
+            //     content:
+            //         'Aplicação da tecnica de leitura de mockup, contendo 2 exercicios'),
+            // CardRepositoryWidget(
+            //     icon: FontAwesomeIcons.markdown,
+            //     title: 'Leitura de Mockup',
+            //     amountOfExercises: '2',
+            //     content:
+            //         'Aplicação da tecnica de leitura de mockup, contendo 2 exercicios'),
+            // CardRepositoryWidget(
+            //     icon: FontAwesomeIcons.glasses,
+            //     title: 'Leitura de Mockup',
+            //     amountOfExercises: '2',
+            //     content:
+            //         'Aplicação da tecnica de leitura de mockup, contendo 2 exercicios'),
+            // CardRepositoryWidget(
+            //     icon: FontAwesomeIcons.glasses,
+            //     title: 'Leitura de Mockup',
+            //     amountOfExercises: '2',
+            //     content:
+            //         'Aplicação da tecnica de leitura de mockup, contendo 2 exercicios'),
+            // CardRepositoryWidget(
+            //     icon: FontAwesomeIcons.glasses,
+            //     title: 'Leitura de Mockup',
+            //     amountOfExercises: '2',
+            //     content:
+            //         'Aplicação da tecnica de leitura de mockup, contendo 2 exercicios'),
           ],
         ),
       ),

@@ -9,13 +9,15 @@ class CardRepositoryWidget extends StatefulWidget {
   final String title;
   final String amountOfExercises;
   final String content;
+  final void Function() navigateTo;
 
   const CardRepositoryWidget({
+    super.key,
     required this.icon,
     required this.title,
     required this.amountOfExercises,
     required this.content,
-    super.key,
+    required this.navigateTo,
   });
 
   @override
@@ -39,12 +41,11 @@ class _CardRepositoryWidgetState extends State<CardRepositoryWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             HeaderCardRepositoryWidget(
-              icon: widget.icon,
-              title: widget.title,
-              amountOfExercises: widget.amountOfExercises,
-            ),
+                icon: widget.icon,
+                title: widget.title,
+                amountOfExercises: widget.amountOfExercises),
             ContentCardRepositoryWidget(content: widget.content),
-            const FooterCardRepositoryWidget()
+            FooterCardRepositoryWidget(navigateTo: widget.navigateTo)
           ],
         ),
       ),
