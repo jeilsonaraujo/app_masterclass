@@ -82,7 +82,12 @@ class _CirclePainter extends BoxPainter {
 
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration cfg) {
-    final dx = offset.dx + 33;
+    double dx = 0.0;
+    if (offset.dx > 250) {
+      dx = offset.dx * 0.18;
+    } else {
+      dx = offset.dx * 0.128;
+    }
     final dy = offset.dy + 5;
     const radius = 50.0;
 
