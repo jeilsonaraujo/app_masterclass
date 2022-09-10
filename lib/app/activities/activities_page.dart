@@ -24,7 +24,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
             child: Column(
               children: [
                 CardRepositoryWidget(
-                  icon: Icon(FontAwesomeIcons.personRunning),
+                  icon: const Icon(FontAwesomeIcons.personRunning),
                   title: 'Animações',
                   amountOfExercises: '4',
                   content:
@@ -42,7 +42,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
                   },
                 ),
                 CardRepositoryWidget(
-                  icon: Icon(FontAwesomeIcons.glasses),
+                  icon: const Icon(FontAwesomeIcons.glasses),
                   title: 'Leitura de Mockup',
                   amountOfExercises: '2',
                   content:
@@ -81,7 +81,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
                   },
                 ),
                 CardRepositoryWidget(
-                  icon: Icon(FontAwesomeIcons.personRunning),
+                  icon: const Icon(FontAwesomeIcons.personRunning),
                   title: 'Animações',
                   amountOfExercises: '4',
                   content:
@@ -99,7 +99,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
                   },
                 ),
                 CardRepositoryWidget(
-                  icon: Icon(FontAwesomeIcons.glasses),
+                  icon: const Icon(FontAwesomeIcons.glasses),
                   title: 'Leitura de Mockup',
                   amountOfExercises: '2',
                   content:
