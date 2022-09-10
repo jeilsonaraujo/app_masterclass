@@ -1,17 +1,13 @@
-import 'package:app_masterclass/app/theme_controller.dart';
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class HeaderPageWidget extends StatefulWidget {
-  final Widget child;
-  const HeaderPageWidget({super.key, required this.child});
+import 'package:app_masterclass/app/theme_controller.dart';
 
-  @override
-  State<HeaderPageWidget> createState() => _HeaderPageWidgetState();
-}
-
-class _HeaderPageWidgetState extends State<HeaderPageWidget> {
+class HeaderHomePageWidget extends StatelessWidget
+    implements PreferredSizeWidget {
+  const HeaderHomePageWidget({Key? key}) : super(key: key);
+  final double height = 120.0;
   @override
   Widget build(BuildContext context) {
     final controller =
@@ -19,7 +15,7 @@ class _HeaderPageWidgetState extends State<HeaderPageWidget> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(bottom: 27.0),
+          padding: const EdgeInsets.only(left: 15, right: 15),
           child: SizedBox(
             height: 92,
             child: Row(
@@ -66,12 +62,11 @@ class _HeaderPageWidgetState extends State<HeaderPageWidget> {
             ),
           ),
         ),
-        Expanded(
-          child: SingleChildScrollView(
-            child: widget.child,
-          ),
-        )
+        SizedBox(height: 27)
       ],
     );
   }
+
+  @override
+  Size get preferredSize => Size.fromHeight(height);
 }

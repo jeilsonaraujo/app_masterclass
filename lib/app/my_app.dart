@@ -1,6 +1,6 @@
-import 'package:app_masterclass/app/theme_controller.dart';
 import 'package:flutter/material.dart';
 
+import 'package:app_masterclass/app/theme_controller.dart';
 import 'package:app_masterclass/app/home/home_page.dart';
 
 class MyAppWidget extends StatefulWidget {
@@ -34,17 +34,19 @@ class _MyAppWidgetState extends State<MyAppWidget> {
 }
 
 ThemeData _lightTheme = ThemeData(
+  backgroundColor: const Color(0xFFD6DFE4),
+  scaffoldBackgroundColor: const Color(0xFFD6DFE4),
   indicatorColor: Colors.black,
   canvasColor: Colors.white,
-  backgroundColor: const Color(0xFFD6DFE4),
   cardColor: const Color(0xFFEDF4F8),
   brightness: Brightness.light,
 );
 
 ThemeData _darkTheme = ThemeData(
+  backgroundColor: const Color(0xFF121517),
+  scaffoldBackgroundColor: const Color(0xFF121517),
   indicatorColor: Colors.white,
   canvasColor: Colors.black,
-  backgroundColor: const Color(0xFF121517),
   cardColor: const Color(0xFF172026),
   brightness: Brightness.dark,
 );

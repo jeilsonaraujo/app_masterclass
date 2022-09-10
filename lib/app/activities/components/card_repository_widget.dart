@@ -1,6 +1,6 @@
-import 'package:app_masterclass/app/activities/components/card_repository_widget/content_card_repository_widget.dart';
 import 'package:flutter/material.dart';
 
+import 'package:app_masterclass/app/activities/components/card_repository_widget/content_card_repository_widget.dart';
 import 'package:app_masterclass/app/activities/components/card_repository_widget/footer_card_repository_widget.dart';
 import 'package:app_masterclass/app/activities/components/card_repository_widget/header_card_repository_widget.dart';
 

@@ -1,8 +1,11 @@
+import 'package:flutter/material.dart';
+
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:app_masterclass/app/about/about_page.dart';
 import 'package:app_masterclass/app/activities/activities_page.dart';
+import 'package:app_masterclass/app/home/header_home_page_widget.dart';
 import 'package:app_masterclass/app/repositories/repositories_page.dart';
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,11 +17,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: DefaultTabController(
+    return DefaultTabController(
         animationDuration: const Duration(milliseconds: 200),
         length: 3,
         child: Scaffold(
+          appBar: const HeaderHomePageWidget(),
           bottomNavigationBar: menu(),
           body: const TabBarView(
             children: [
@@ -27,9 +30,7 @@ class _HomePageState extends State<HomePage> {
               AboutPage(),
             ],
           ),
-        ),
-      ),
-    );
+        ));
   }
 
   Widget menu() {
@@ -90,6 +91,7 @@ class _CirclePainter extends BoxPainter {
 
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration cfg) {
+    //TODO! test on diferent size device
     double dx = 0.0;
     if (isPortraitMode) {
       dx = offset.dx + 33;
