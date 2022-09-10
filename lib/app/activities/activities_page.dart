@@ -66,8 +66,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
                   ),
                   title: 'Playground',
                   amountOfExercises: '3',
-                  content:
-                      'Aplicação da tecnica de leitura de mockup, contendo 2 exercicios',
+                  content: 'Ambiente destinado a testes e estudos em geral',
                   navigateTo: () {
                     Navigator.push(
                       context,
