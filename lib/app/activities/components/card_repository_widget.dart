@@ -5,7 +5,7 @@ import 'package:app_masterclass/app/activities/components/card_repository_widget
 import 'package:app_masterclass/app/activities/components/card_repository_widget/header_card_repository_widget.dart';
 
 class CardRepositoryWidget extends StatefulWidget {
-  final IconData icon;
+  final Widget icon;
   final String title;
   final String amountOfExercises;
   final String content;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HeaderCardRepositoryWidget extends StatefulWidget {
-  final IconData icon;
+  final Widget icon;
   final String title;
   final String amountOfExercises;
   const HeaderCardRepositoryWidget({
@@ -32,7 +32,7 @@ class _HeaderCardRepositoryWidgetState
                 height: 43,
                 decoration: const BoxDecoration(
                     color: Color(0xFF055AA3), shape: BoxShape.circle),
-                child: Icon(widget.icon, color: Theme.of(context).canvasColor),
+                child: widget.icon,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 8.0),

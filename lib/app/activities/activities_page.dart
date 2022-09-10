@@ -24,7 +24,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
             child: Column(
               children: [
                 CardRepositoryWidget(
-                  icon: FontAwesomeIcons.personRunning,
+                  icon: Icon(FontAwesomeIcons.personRunning),
                   title: 'Animações',
                   amountOfExercises: '4',
                   content:
@@ -42,7 +42,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
                   },
                 ),
                 CardRepositoryWidget(
-                  icon: FontAwesomeIcons.glasses,
+                  icon: Icon(FontAwesomeIcons.glasses),
                   title: 'Leitura de Mockup',
                   amountOfExercises: '2',
                   content:
@@ -60,7 +60,10 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
                   },
                 ),
                 CardRepositoryWidget(
-                  icon: FontAwesomeIcons.markdown, //TODO! add this icon
+                  icon: Image.asset(
+                    'assets/material-toys/Icon material-toys.png',
+                    color: Theme.of(context).indicatorColor,
+                  ),
                   title: 'Playground',
                   amountOfExercises: '3',
                   content:
@@ -78,7 +81,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
                   },
                 ),
                 CardRepositoryWidget(
-                  icon: FontAwesomeIcons.personRunning,
+                  icon: Icon(FontAwesomeIcons.personRunning),
                   title: 'Animações',
                   amountOfExercises: '4',
                   content:
@@ -96,7 +99,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
                   },
                 ),
                 CardRepositoryWidget(
-                  icon: FontAwesomeIcons.glasses,
+                  icon: Icon(FontAwesomeIcons.glasses),
                   title: 'Leitura de Mockup',
                   amountOfExercises: '2',
                   content:
