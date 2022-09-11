@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CardAboutWidget extends StatefulWidget {
-  const CardAboutWidget({super.key});
+  final String urlImage;
+  final String userName;
+  final String bio;
+  const CardAboutWidget({
+    super.key,
+    required this.urlImage,
+    required this.userName,
+    required this.bio,
+  });
 
   @override
   State<CardAboutWidget> createState() => _CardAboutWidgetState();
@@ -32,24 +40,25 @@ class _CardAboutWidgetState extends State<CardAboutWidget> {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(60),
-                  child: Image.network(
-                      'https://avatars.githubusercontent.com/u/46649531?v=4',
-                      fit: BoxFit.contain),
+                  child: !widget.urlImage.isEmpty
+                      ? Image.network(widget.urlImage, fit: BoxFit.contain)
+                      : CircularProgressIndicator(),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  'Jeilson Araujo',
-                  style: TextStyle(fontSize: 18),
+                  widget.userName,
+                  style: const TextStyle(fontSize: 18),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 23.0, right: 23, top: 15.0),
+              Padding(
+                padding:
+                    const EdgeInsets.only(left: 23.0, right: 23, top: 15.0),
                 child: Text(
-                  'Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus.Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!',
+                  widget.bio,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 12,
                   ),
                 ),
