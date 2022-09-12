@@ -31,20 +31,37 @@ class _CardAboutWidgetState extends State<CardAboutWidget> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                width: 100,
-                height: 100,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(color: Colors.black, width: 2.5),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(60),
-                  child: widget.urlImage.isNotEmpty
-                      ? Image.network(widget.urlImage, fit: BoxFit.contain)
-                      : const CircularProgressIndicator(),
-                ),
-              ),
+              widget.urlImage.isNotEmpty
+                  ? Container(
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.black, width: 2.5),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(60),
+                        child: widget.urlImage.isNotEmpty
+                            ? Image.network(widget.urlImage,
+                                fit: BoxFit.contain)
+                            : const CircularProgressIndicator(),
+                      ),
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.only(top: 18.0),
+                      child: Container(
+                          width: 100,
+                          height: 100,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CircularProgressIndicator(
+                              color: Theme.of(context).indicatorColor,
+                            ),
+                          )),
+                    ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(

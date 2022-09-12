@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import 'package:app_masterclass/app/about/bloc/about_bloc.dart';
 import 'package:app_masterclass/app/about/bloc/about_events.dart';
 import 'package:app_masterclass/app/about/bloc/about_state.dart';
@@ -8,7 +10,6 @@ import 'package:app_masterclass/app/about/components/card_about_widget.dart';
 import 'package:app_masterclass/app/about/components/roller_favorite_tecnologies.dart';
 import 'package:app_masterclass/app/about/components/skills_widget.dart';
 import 'package:app_masterclass/app/about/model/dev_model.dart';
-import 'package:flutter/material.dart';
 
 import 'package:app_masterclass/components/header_page_widget.dart';
 
