@@ -39,7 +39,7 @@ class _AboutPageState extends State<AboutPage> {
             return Padding(
                 padding: const EdgeInsets.only(left: 14.0, right: 14.0),
                 child: SingleChildScrollView(
-                  physics: ScrollPhysics(),
+                  physics: const ScrollPhysics(),
                   child: StreamBuilder<SkillsState>(
                       stream: bloc.stream,
                       builder: (context, AsyncSnapshot<SkillsState> snapshot) {

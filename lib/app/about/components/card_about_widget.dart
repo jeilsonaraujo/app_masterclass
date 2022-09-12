@@ -40,9 +40,9 @@ class _CardAboutWidgetState extends State<CardAboutWidget> {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(60),
-                  child: !widget.urlImage.isEmpty
+                  child: widget.urlImage.isNotEmpty
                       ? Image.network(widget.urlImage, fit: BoxFit.contain)
-                      : CircularProgressIndicator(),
+                      : const CircularProgressIndicator(),
                 ),
               ),
               Padding(

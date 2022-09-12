@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:app_masterclass/app/theme_controller.dart';
 
+// ignore: must_be_immutable
 class HeaderPageWidget extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   bool isDetailPage;
@@ -77,7 +78,7 @@ class HeaderPageWidget extends StatelessWidget implements PreferredSizeWidget {
             ),
           ),
         ),
-        SizedBox(height: 27)
+        const SizedBox(height: 27)
       ],
     );
   }

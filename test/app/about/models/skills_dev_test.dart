@@ -1,6 +1,5 @@
 import 'package:app_masterclass/security/hasura_key.dart';
 import 'package:dio/dio.dart';
-import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:app_masterclass/app/about/model/dev_skills_model.dart';
@@ -23,18 +22,18 @@ void main() async {
     expect(devSkills.skills.length, 2);
   });
 
-  var url = "https://devskills.hasura.app/api/rest/about_dev";
+  // var url = "https://devskills.hasura.app/api/rest/about_dev";
 
-  var dio = Dio();
-  final response = await dio.get(
-    url,
-    options: Options(
-      headers: {
-        "Content-Type": "application/json",
-        "x-hasura-admin-secret": ""
-      },
-    ),
-  );
+  // var dio = Dio();
+  // final response = await dio.get(
+  //   url,
+  //   options: Options(
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       "x-hasura-admin-secret": ""
+  //     },
+  //   ),
+  // );
 
   // DevSkillsModel devSkills = DevSkillsModel.fromMap(valueMap);
 //   print(devSkills.favoritesTecnologies.length);

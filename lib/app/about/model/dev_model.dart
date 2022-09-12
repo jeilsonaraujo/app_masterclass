@@ -2,11 +2,13 @@
 import 'dart:convert';
 
 class DevModel {
+  // ignore: non_constant_identifier_names
   final String avatar_url;
   final String name;
   final String bio;
   final String blog;
   DevModel({
+    // ignore: non_constant_identifier_names
     required this.avatar_url,
     required this.name,
     required this.bio,
@@ -14,6 +16,7 @@ class DevModel {
   });
 
   DevModel copyWith({
+    // ignore: non_constant_identifier_names
     String? avatar_url,
     String? name,
     String? bio,

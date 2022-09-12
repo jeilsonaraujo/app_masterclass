@@ -21,7 +21,7 @@ class RollerFavoriteTecnologies extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Container(
+            child: SizedBox(
               height: 100,
               width: double.infinity,
               child: ListView.builder(

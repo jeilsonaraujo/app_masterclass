@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:app_masterclass/app/about/bloc_skills/skills_events.dart';
 import 'package:app_masterclass/app/about/bloc_skills/skills_state.dart';
-import 'package:app_masterclass/app/about/model/dev_model.dart';
 import 'package:app_masterclass/app/about/model/dev_skills_model.dart';
 import 'package:app_masterclass/app/about/services/dio_skills_service.dart';
 import 'package:app_masterclass/app/about/services/skills_service.dart';

@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                 const Tab(
                   //text: "Repositórios",
                   icon: Padding(
-                    padding: const EdgeInsets.only(left: 22.0, right: 22),
+                    padding: EdgeInsets.only(left: 22.0, right: 22),
                     child: Icon(
                       FontAwesomeIcons.github,
                       size: 40,
@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const Tab(
                   icon: Padding(
-                    padding: const EdgeInsets.only(left: 22.0, right: 22),
+                    padding: EdgeInsets.only(left: 22.0, right: 22),
                     child: Icon(
                       Icons.person,
                       size: 40,

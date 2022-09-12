@@ -46,7 +46,7 @@ class DetailsPage extends StatelessWidget {
                               alignment: Alignment.center,
                               child: Text(
                                 (index + 1).toString(),
-                                style: TextStyle(color: Colors.white),
+                                style: const TextStyle(color: Colors.white),
                               )),
                         ),
                       ),
