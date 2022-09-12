@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
 class FavoriteTecnologyWidget extends StatelessWidget {
-  const FavoriteTecnologyWidget({super.key});
+  final String imageUrl;
+  final String tecnologyName;
+  const FavoriteTecnologyWidget({
+    super.key,
+    required this.imageUrl,
+    required this.tecnologyName,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +21,14 @@ class FavoriteTecnologyWidget extends StatelessWidget {
           padding: const EdgeInsets.only(top: 14.0, left: 18, right: 18),
           child: Column(
             children: [
-              Image.asset(
-                'assets/simple-flutter/Icon simple-flutter.png',
+              Image.network(
+                imageUrl,
                 width: 35,
                 color: Theme.of(context).indicatorColor,
               ),
-              const Padding(
-                padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
-                child: Text('Flutter'),
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                child: Text(tecnologyName),
               ),
             ],
           ),

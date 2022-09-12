@@ -5,21 +5,25 @@ class DevModel {
   final String avatar_url;
   final String name;
   final String bio;
+  final String blog;
   DevModel({
     required this.avatar_url,
     required this.name,
     required this.bio,
+    required this.blog,
   });
 
   DevModel copyWith({
     String? avatar_url,
     String? name,
     String? bio,
+    String? blog,
   }) {
     return DevModel(
       avatar_url: avatar_url ?? this.avatar_url,
       name: name ?? this.name,
       bio: bio ?? this.bio,
+      blog: blog ?? this.blog,
     );
   }
 
@@ -28,6 +32,7 @@ class DevModel {
       'avatar_url': avatar_url,
       'name': name,
       'bio': bio,
+      'blog': blog,
     };
   }
 
@@ -36,6 +41,7 @@ class DevModel {
       avatar_url: map['avatar_url'] as String,
       name: map['name'] as String,
       bio: map['bio'] as String,
+      blog: map['blog'] as String,
     );
   }
 
@@ -46,7 +52,7 @@ class DevModel {
 
   @override
   String toString() =>
-      'DevModel(avatar_url: $avatar_url, name: $name, bio: $bio)';
+      'DevModel(avatar_url: $avatar_url, name: $name, bio: $bio, blog: $blog)';
 
   @override
   bool operator ==(covariant DevModel other) {
@@ -54,9 +60,11 @@ class DevModel {
 
     return other.avatar_url == avatar_url &&
         other.name == name &&
-        other.bio == bio;
+        other.bio == bio &&
+        other.blog == blog;
   }
 
   @override
-  int get hashCode => avatar_url.hashCode ^ name.hashCode ^ bio.hashCode;
+  int get hashCode =>
+      avatar_url.hashCode ^ name.hashCode ^ bio.hashCode ^ blog.hashCode;
 }
