@@ -1,4 +1,4 @@
-import 'package:app_masterclass/app/about/model/dev_model.dart';
+import 'package:app_masterclass/app/about/models/dev_model.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 

@@ -1,5 +1,5 @@
 import 'package:app_masterclass/app/about/components/favorite_tecnology_widget.dart';
-import 'package:app_masterclass/app/about/model/favorite_tecnologies_model.dart';
+import 'package:app_masterclass/app/about/models/favorite_tecnologies_model.dart';
 import 'package:flutter/material.dart';
 
 class RollerFavoriteTecnologies extends StatelessWidget {

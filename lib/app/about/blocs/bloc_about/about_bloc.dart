@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:app_masterclass/app/about/bloc/about_events.dart';
-import 'package:app_masterclass/app/about/bloc/about_state.dart';
-import 'package:app_masterclass/app/about/model/dev_model.dart';
-import 'package:app_masterclass/app/about/services/about_service.dart';
-import 'package:app_masterclass/app/about/services/dio_about_service.dart';
+import 'package:app_masterclass/app/about/blocs/bloc_about/about_events.dart';
+import 'package:app_masterclass/app/about/blocs/bloc_about/about_state.dart';
+import 'package:app_masterclass/app/about/models/dev_model.dart';
+import 'package:app_masterclass/app/about/services/about_service/about_service.dart';
+import 'package:app_masterclass/app/about/services/about_service/dio_about_service.dart';
 
 class AboutBloc {
   final IAboutService _aboutService = DioAboutService();

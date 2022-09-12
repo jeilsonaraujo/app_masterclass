@@ -1,8 +1,6 @@
-import 'package:app_masterclass/app/about/services/about_service.dart';
-
+import 'package:app_masterclass/app/about/models/dev_model.dart';
+import 'package:app_masterclass/app/about/services/about_service/about_service.dart';
 import 'package:dio/dio.dart';
-
-import '../model/dev_model.dart';
 
 class DioAboutService extends IAboutService {
   @override

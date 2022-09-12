@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
-import 'package:app_masterclass/app/about/model/favorite_tecnologies_model.dart';
-import 'package:app_masterclass/app/about/model/skill_model.dart';
+import 'package:app_masterclass/app/about/models/favorite_tecnologies_model.dart';
+import 'package:app_masterclass/app/about/models/skill_model.dart';
 
 class DevSkillsModel {
   final List<FavoriteTecnologyModel> favoritesTecnologies;

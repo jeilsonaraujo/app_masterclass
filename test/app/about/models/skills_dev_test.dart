@@ -2,7 +2,7 @@ import 'package:app_masterclass/security/hasura_key.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:app_masterclass/app/about/model/dev_skills_model.dart';
+import 'package:app_masterclass/app/about/models/dev_skills_model.dart';
 
 void main() async {
   test("shoud return data from hasura", () async {

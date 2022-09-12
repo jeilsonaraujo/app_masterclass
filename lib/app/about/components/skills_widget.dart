@@ -1,5 +1,5 @@
 import 'package:app_masterclass/app/about/components/skill_item_widget.dart';
-import 'package:app_masterclass/app/about/model/skill_model.dart';
+import 'package:app_masterclass/app/about/models/skill_model.dart';
 import 'package:flutter/material.dart';
 
 class SkilsWidget extends StatelessWidget {
