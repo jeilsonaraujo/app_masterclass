@@ -14,12 +14,12 @@ void main() async {
       options: Options(
         headers: {
           "Content-Type": "application/json",
-          "x-hasura-admin-secret": HasuraKey.key().key
+          "x-hasura-admin-secret": HasuraKey.Key
         },
       ),
     );
     DevSkillsModel devSkills = DevSkillsModel.fromMap(response.data);
-    expect(devSkills.skills.length, 2);
+    expect(devSkills.skills.length, 8);
   });
 
   // var url = "https://devskills.hasura.app/api/rest/about_dev";
