@@ -48,6 +48,6 @@ app.*.map.json
 ios/
 android/
 macos/
-
+web/
 
 lib/security/

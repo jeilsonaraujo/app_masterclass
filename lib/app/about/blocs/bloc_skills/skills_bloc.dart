@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:app_masterclass/app/about/blocs/bloc_skills/skills_events.dart';
 import 'package:app_masterclass/app/about/blocs/bloc_skills/skills_state.dart';
 import 'package:app_masterclass/app/about/models/dev_skills_model.dart';
-import 'package:app_masterclass/app/about/services/skills_service/dio_skills_service.dart';
 import 'package:app_masterclass/app/about/services/skills_service/skills_service.dart';
 
 class SkillsBloc {
-  final ISkillsService _skillsService = DioSkillsService();
+  final ISkillsService _skillsService;
+
   final StreamController<SkillsEvent> _inputSkillsController =
       StreamController<SkillsEvent>();
   final StreamController<SkillsState> _outputSkillsController =
@@ -16,7 +16,7 @@ class SkillsBloc {
   Sink<SkillsEvent> get inputSkills => _inputSkillsController.sink;
   Stream<SkillsState> get stream => _outputSkillsController.stream;
 
-  SkillsBloc() {
+  SkillsBloc(this._skillsService) {
     _inputSkillsController.stream.listen(_mapEventToState);
   }
 

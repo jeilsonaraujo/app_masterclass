@@ -1,3 +1,4 @@
+import 'package:app_masterclass/app/about/dependencies/dependency_injection.dart';
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -17,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> tabsPages = [
     const ActivitiesPage(),
     const RepositoriesPage(),
-    const AboutPage(),
+    DependencyInjection(child: const AboutPage()),
   ];
 
   @override

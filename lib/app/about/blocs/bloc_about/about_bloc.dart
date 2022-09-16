@@ -4,10 +4,10 @@ import 'package:app_masterclass/app/about/blocs/bloc_about/about_events.dart';
 import 'package:app_masterclass/app/about/blocs/bloc_about/about_state.dart';
 import 'package:app_masterclass/app/about/models/dev_model.dart';
 import 'package:app_masterclass/app/about/services/about_service/about_service.dart';
-import 'package:app_masterclass/app/about/services/about_service/dio_about_service.dart';
 
 class AboutBloc {
-  final IAboutService _aboutService = DioAboutService();
+  final IAboutService _aboutService;
+
   final StreamController<AboutEvent> _inputAboutController =
       StreamController<AboutEvent>();
   final StreamController<AboutState> _outputAboutController =
@@ -16,7 +16,7 @@ class AboutBloc {
   Sink<AboutEvent> get inputAbout => _inputAboutController.sink;
   Stream<AboutState> get stream => _outputAboutController.stream;
 
-  AboutBloc() {
+  AboutBloc(this._aboutService) {
     _inputAboutController.stream.listen(_mapEventToState);
   }
 

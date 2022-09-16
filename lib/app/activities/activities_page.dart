@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:app_masterclass/components/header_page_widget.dart';
 import 'package:app_masterclass/app/activities/details_page/details_page.dart';
-import 'package:app_masterclass/app/activities/components/card_repository_widget.dart';
+import 'package:app_masterclass/app/activities/components/card_activity_widget.dart';
 
 class ActivitiesPage extends StatefulWidget {
   const ActivitiesPage({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                CardRepositoryWidget(
+                CardActivityWidget(
                   icon: const Icon(FontAwesomeIcons.personRunning),
                   title: 'Animações',
                   amountOfExercises: '4',
@@ -41,7 +41,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
                     );
                   },
                 ),
-                CardRepositoryWidget(
+                CardActivityWidget(
                   icon: const Icon(FontAwesomeIcons.glasses),
                   title: 'Leitura de Mockup',
                   amountOfExercises: '2',
@@ -59,7 +59,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
                     );
                   },
                 ),
-                CardRepositoryWidget(
+                CardActivityWidget(
                   icon: Image.asset(
                     'assets/material-toys/Icon material-toys.png',
                     color: Theme.of(context).indicatorColor,
@@ -79,7 +79,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
                     );
                   },
                 ),
-                CardRepositoryWidget(
+                CardActivityWidget(
                   icon: const Icon(FontAwesomeIcons.personRunning),
                   title: 'Animações',
                   amountOfExercises: '4',
@@ -97,7 +97,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
                     );
                   },
                 ),
-                CardRepositoryWidget(
+                CardActivityWidget(
                   icon: const Icon(FontAwesomeIcons.glasses),
                   title: 'Leitura de Mockup',
                   amountOfExercises: '2',

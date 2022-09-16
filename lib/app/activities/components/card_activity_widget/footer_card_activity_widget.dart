@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class FooterCardRepositoryWidget extends StatefulWidget {
+class FooterCardActivityWidget extends StatefulWidget {
   final void Function() navigateTo;
-  const FooterCardRepositoryWidget({super.key, required this.navigateTo});
+  const FooterCardActivityWidget({super.key, required this.navigateTo});
 
   @override
-  State<FooterCardRepositoryWidget> createState() =>
-      _FooterCardRepositoryWidgetState();
+  State<FooterCardActivityWidget> createState() =>
+      _FooterCardActivityWidgetState();
 }
 
-class _FooterCardRepositoryWidgetState
-    extends State<FooterCardRepositoryWidget> {
+class _FooterCardActivityWidgetState extends State<FooterCardActivityWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(

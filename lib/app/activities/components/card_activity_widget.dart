@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-import 'package:app_masterclass/app/activities/components/card_repository_widget/content_card_repository_widget.dart';
-import 'package:app_masterclass/app/activities/components/card_repository_widget/footer_card_repository_widget.dart';
-import 'package:app_masterclass/app/activities/components/card_repository_widget/header_card_repository_widget.dart';
+import 'package:app_masterclass/app/activities/components/card_activity_widget/content_card_activity_widget.dart';
+import 'package:app_masterclass/app/activities/components/card_activity_widget/footer_card_activity_widget.dart';
+import 'package:app_masterclass/app/activities/components/card_activity_widget/header_card_activity_widget.dart';
 
-class CardRepositoryWidget extends StatefulWidget {
+class CardActivityWidget extends StatefulWidget {
   final Widget icon;
   final String title;
   final String amountOfExercises;
   final String content;
   final void Function() navigateTo;
 
-  const CardRepositoryWidget({
+  const CardActivityWidget({
     super.key,
     required this.icon,
     required this.title,
@@ -21,10 +21,10 @@ class CardRepositoryWidget extends StatefulWidget {
   });
 
   @override
-  State<CardRepositoryWidget> createState() => _CardRepositoryWidgetState();
+  State<CardActivityWidget> createState() => _CardActivityWidgetState();
 }
 
-class _CardRepositoryWidgetState extends State<CardRepositoryWidget> {
+class _CardActivityWidgetState extends State<CardActivityWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -40,12 +40,12 @@ class _CardRepositoryWidgetState extends State<CardRepositoryWidget> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            HeaderCardRepositoryWidget(
+            HeaderCardActivityWidget(
                 icon: widget.icon,
                 title: widget.title,
                 amountOfExercises: widget.amountOfExercises),
-            ContentCardRepositoryWidget(content: widget.content),
-            FooterCardRepositoryWidget(navigateTo: widget.navigateTo)
+            ContentCardActivityWidget(content: widget.content),
+            FooterCardActivityWidget(navigateTo: widget.navigateTo)
           ],
         ),
       ),

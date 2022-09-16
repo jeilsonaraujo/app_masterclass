@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class HeaderCardRepositoryWidget extends StatefulWidget {
+class HeaderCardActivityWidget extends StatefulWidget {
   final Widget icon;
   final String title;
   final String amountOfExercises;
-  const HeaderCardRepositoryWidget({
+  const HeaderCardActivityWidget({
     required this.icon,
     required this.title,
     required this.amountOfExercises,
@@ -12,12 +12,11 @@ class HeaderCardRepositoryWidget extends StatefulWidget {
   });
 
   @override
-  State<HeaderCardRepositoryWidget> createState() =>
-      _HeaderCardRepositoryWidgetState();
+  State<HeaderCardActivityWidget> createState() =>
+      _HeaderCardActivityWidgetState();
 }
 
-class _HeaderCardRepositoryWidgetState
-    extends State<HeaderCardRepositoryWidget> {
+class _HeaderCardActivityWidgetState extends State<HeaderCardActivityWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
