@@ -1,22 +1,22 @@
 import 'dart:convert';
-
-import 'package:app_masterclass/app/repositories/domain/entities/git_repo_entity.dart';
-import 'package:app_masterclass/app/repositories/external/git_repo_datasource.dart';
-import 'package:app_masterclass/app/repositories/infra/repositories/git_repo_repository.dart';
+import 'package:app_masterclass/app/repositories/domain/entities/gitrepo.dart';
+import 'package:app_masterclass/app/repositories/external/datasources/gitrepo_datasource.dart';
+import 'package:app_masterclass/app/repositories/infra/repositories/post_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:mockito/mockito.dart';
 
-class GitRepoDatasourceMock extends Mock implements GitRepoExternalDatasource {}
+class GitRepoDatasourceMock extends Mock implements GitRepoDatasource {}
 
 void main() {
-  final GitRepoExternalDatasource gitRepoDatasource = GitRepoDatasourceMock();
+  final GitRepoDatasource gitRepoDatasource = GitRepoDatasourceMock();
 
   final repository = GitRepoRepository(gitRepoDatasource);
 //Future<List<dynamic>> Function() Function(Invocation) espera
 //Future<dynamic> Function(Invocation)
   test('deve retornar uma lista de repositorios e a quantidade 2', () async {
-    when(() => gitRepoDatasource.getRepos()).thenAnswer((_) async => repoJson);
+    when(() => gitRepoDatasource.getRepos())
+        .thenAnswer((_) => repoJson); // todo! fix => // async => repoJson);
     final result = await repository.getRepos();
     final list = result.fold(id, id);
     expect(list, isA<List<GitRepo>>());

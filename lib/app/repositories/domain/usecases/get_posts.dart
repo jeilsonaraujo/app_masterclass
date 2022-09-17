@@ -1,15 +1,15 @@
 import 'package:fpdart/fpdart.dart';
 
-import '../entities/git_repo_entity.dart';
+import '../entities/gitrepo.dart';
 import '../errors/errors.dart';
-import '../repositories/git_repo_repository.dart';
+import '../repositories/gitrepo_repository.dart';
 
-abstract class IGetRepo {
+abstract class IGetGitRepos {
   Future<Either<IGitRepoException, List<GitRepo>>> call();
 }
 
-class GetGitRepo implements IGetRepo {
-  final IGitRepoDomainRepository repository;
+class GetGitRepo implements IGetGitRepos {
+  final IGitRepoRepository repository;
 
   GetGitRepo(this.repository);
 

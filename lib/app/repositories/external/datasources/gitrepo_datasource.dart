@@ -1,12 +1,12 @@
 import 'package:uno/uno.dart';
 
-import '../domain/errors/errors.dart';
-import '../infra/datasources/git_repo_datasource.dart';
+import '../../domain/errors/errors.dart';
+import '../../infra/datasources/gitrepo_datasource.dart';
 
-class GitRepoExternalDatasource implements IGitRepoInfraDatasource {
+class GitRepoDatasource implements IGitRepoDatasource {
   final Uno uno;
 
-  GitRepoExternalDatasource(this.uno);
+  GitRepoDatasource(this.uno);
 
   @override
   Future<List> getRepos() async {

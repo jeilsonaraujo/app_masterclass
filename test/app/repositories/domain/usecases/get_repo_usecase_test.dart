@@ -1,11 +1,11 @@
-import 'package:app_masterclass/app/repositories/domain/entities/git_repo_entity.dart';
-import 'package:app_masterclass/app/repositories/domain/repositories/git_repo_repository.dart';
-import 'package:app_masterclass/app/repositories/domain/usecases/get_repo_usecase.dart';
+import 'package:app_masterclass/app/repositories/domain/entities/gitrepo.dart';
+import 'package:app_masterclass/app/repositories/domain/repositories/gitrepo_repository.dart';
+import 'package:app_masterclass/app/repositories/domain/usecases/get_posts.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:mocktail/mocktail.dart';
 
-class IGitRepoRepositoryMock extends Mock implements IGitRepoDomainRepository {}
+class IGitRepoRepositoryMock extends Mock implements IGitRepoRepository {}
 
 void main() {
   final repository = IGitRepoRepositoryMock();
@@ -17,7 +17,7 @@ void main() {
   test('shoud return a List<GitRepo>', () async {
     when(() => repository.getRepos()).thenAnswer((_) async => right(list));
     final result = await usecase();
-    expect(result.runtimeType, List<GitRepo>);
+    expect(result.fold(id, id), isA<List<GitRepo>>());
   });
 
   test('shoud return name of first element', () async {

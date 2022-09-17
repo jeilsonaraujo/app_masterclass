@@ -1,8 +1,8 @@
 import 'package:fpdart/fpdart.dart';
 
-import '../entities/git_repo_entity.dart';
+import '../entities/gitrepo.dart';
 import '../errors/errors.dart';
 
-abstract class IGitRepoDomainRepository {
+abstract class IGitRepoRepository {
   Future<Either<IGitRepoException, List<GitRepo>>> getRepos();
 }
