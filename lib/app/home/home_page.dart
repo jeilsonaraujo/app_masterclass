@@ -5,7 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:app_masterclass/app/about/about_page.dart';
 import 'package:app_masterclass/app/activities/activities_page.dart';
-import 'package:app_masterclass/app/repositories/repositories_page.dart';
+import 'package:app_masterclass/app/repositories/presenter/repositories_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
