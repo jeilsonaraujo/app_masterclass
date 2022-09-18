@@ -12,9 +12,9 @@ class BlocRepository {
   final IGetGitRepos _repositoryRepo;
 
   final StreamController<RepositoryEvents> _inputRepoController =
-      StreamController<RepositoryEvents>();
+      StreamController<RepositoryEvents>.broadcast();
   final StreamController<RepositoryState> _outputRepoontroller =
-      StreamController<RepositoryState>();
+      StreamController<RepositoryState>.broadcast();
 
   Sink<RepositoryEvents> get inputRepo => _inputRepoController.sink;
   Stream<RepositoryState> get stream => _outputRepoontroller.stream;

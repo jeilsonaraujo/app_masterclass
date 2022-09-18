@@ -9,9 +9,9 @@ class AboutBloc {
   final IAboutService _aboutService;
 
   final StreamController<AboutEvent> _inputAboutController =
-      StreamController<AboutEvent>();
+      StreamController<AboutEvent>.broadcast();
   final StreamController<AboutState> _outputAboutController =
-      StreamController<AboutState>();
+      StreamController<AboutState>.broadcast();
 
   Sink<AboutEvent> get inputAbout => _inputAboutController.sink;
   Stream<AboutState> get stream => _outputAboutController.stream;

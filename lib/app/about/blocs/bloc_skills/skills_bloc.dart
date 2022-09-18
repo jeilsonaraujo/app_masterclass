@@ -9,9 +9,9 @@ class SkillsBloc {
   final ISkillsService _skillsService;
 
   final StreamController<SkillsEvent> _inputSkillsController =
-      StreamController<SkillsEvent>();
+      StreamController<SkillsEvent>.broadcast();
   final StreamController<SkillsState> _outputSkillsController =
-      StreamController<SkillsState>();
+      StreamController<SkillsState>.broadcast();
 
   Sink<SkillsEvent> get inputSkills => _inputSkillsController.sink;
   Stream<SkillsState> get stream => _outputSkillsController.stream;
