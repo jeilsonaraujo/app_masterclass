@@ -1,11 +1,12 @@
 import 'package:app_masterclass/app/about/dependencies/dependency_injection.dart';
+import 'package:app_masterclass/app/repositories/presenter/dependencies/repository_dependencies.dart';
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:app_masterclass/app/about/about_page.dart';
 import 'package:app_masterclass/app/activities/activities_page.dart';
-import 'package:app_masterclass/app/repositories/presenter/repositories_page.dart';
+import 'package:app_masterclass/app/repositories/presenter/pages/repositories_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Widget> tabsPages = [
     const ActivitiesPage(),
-    const RepositoriesPage(),
+    RepositoryDependency(child: const RepositoriesPage()),
     DependencyInjection(child: const AboutPage()),
   ];
 
