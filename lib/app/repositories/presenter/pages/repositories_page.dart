@@ -1,4 +1,3 @@
-import 'package:app_masterclass/app/repositories/presenter/bloc/repository_bloc.dart';
 import 'package:app_masterclass/app/repositories/presenter/bloc/repository_events.dart';
 import 'package:app_masterclass/app/repositories/presenter/bloc/repository_state.dart';
 import 'package:app_masterclass/app/repositories/presenter/dependencies/repository_dependencies.dart';
