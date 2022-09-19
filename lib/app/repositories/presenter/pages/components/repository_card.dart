@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 
 class CardRepositoryWidget extends StatefulWidget {
   final String repositoryName;
+  final int repositoryStars;
+  final int repositoryCommits;
   const CardRepositoryWidget({
     required this.repositoryName,
+    required this.repositoryStars,
+    required this.repositoryCommits,
     super.key,
   });
 
@@ -33,16 +37,18 @@ class _CardRepositoryWidgetState extends State<CardRepositoryWidget> {
                   style: const TextStyle(fontWeight: FontWeight.bold)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text('Commits:'),
-                  Text('6', style: TextStyle(fontWeight: FontWeight.bold)),
+                children: [
+                  const Text('Commits:'),
+                  Text('${widget.repositoryCommits}',
+                      style: const TextStyle(fontWeight: FontWeight.bold)),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text('Stars:'),
-                  Text('6', style: TextStyle(fontWeight: FontWeight.bold)),
+                children: [
+                  const Text('Stars:'),
+                  Text('${widget.repositoryStars}',
+                      style: const TextStyle(fontWeight: FontWeight.bold)),
                 ],
               )
             ],

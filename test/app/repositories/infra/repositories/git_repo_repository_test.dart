@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:app_masterclass/app/repositories/domain/entities/gitrepo.dart';
 import 'package:app_masterclass/app/repositories/external/datasources/gitrepo_datasource.dart';
-import 'package:app_masterclass/app/repositories/infra/repositories/post_repository.dart';
+import 'package:app_masterclass/app/repositories/infra/repositories/gitrepo_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:mockito/mockito.dart';

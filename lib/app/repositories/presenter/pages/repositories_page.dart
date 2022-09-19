@@ -33,6 +33,8 @@ class _RepositoriesPageState extends State<RepositoriesPage> {
                 itemBuilder: (context, index) {
                   return CardRepositoryWidget(
                     repositoryName: reposList[index].name,
+                    repositoryCommits: reposList[index].commits,
+                    repositoryStars: reposList[index].stars,
                   );
                 });
           },

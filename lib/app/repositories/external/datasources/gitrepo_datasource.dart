@@ -5,14 +5,17 @@ import '../../infra/datasources/gitrepo_datasource.dart';
 
 class GitRepoDatasource implements IGitRepoDatasource {
   final Uno uno;
-
-  GitRepoDatasource(this.uno);
+  final String userName;
+  GitRepoDatasource(
+    this.uno, {
+    required this.userName,
+  });
 
   @override
   Future<List> getRepos() async {
     try {
       final response =
-          await uno.get('https://api.github.com/users/Decripter/repos');
+          await uno.get('https://api.github.com/users/$userName/repos');
 
       return response.data;
     } catch (e, s) {

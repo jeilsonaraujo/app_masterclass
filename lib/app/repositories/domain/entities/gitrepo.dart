@@ -1,7 +1,7 @@
 class GitRepo {
   final String name;
-  final int commits;
-  final int stars;
+  int commits;
+  int stars;
 
   GitRepo({
     required this.name,
