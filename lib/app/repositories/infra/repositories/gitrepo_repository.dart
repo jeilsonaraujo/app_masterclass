@@ -30,6 +30,7 @@ class GitRepoRepository extends IGitRepoRepository {
 //commits
 
         commitGitRepoDatasource = CommitsGitRepoDatasource(
+            //TODO!
             userName: 'decripter',
             repositoryName: reposList[repo].name,
             uno: Uno());
@@ -44,7 +45,7 @@ class GitRepoRepository extends IGitRepoRepository {
         starGitRepoDatasource = StarsGitRepoDatasource(
             userName: 'decripter',
             repositoryName: reposList[repo].name,
-            uno: Uno());
+            uno: Uno()); //TODO noa instanciar nada aqui, tudo via injecao
         var resultStars = await starGitRepoDatasource.getStarsRepo();
         var starsList = resultStars.map(StarsGitRepoAdapter.fromJson).toList();
         reposList[repo].stars = starsList.length;

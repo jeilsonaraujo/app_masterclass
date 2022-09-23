@@ -46,7 +46,7 @@ class _AboutPageState extends State<AboutPage> {
             return Padding(
                 padding: const EdgeInsets.only(left: 14.0, right: 14.0),
                 child: SingleChildScrollView(
-                  physics: const ScrollPhysics(),
+                  //TODO! fix this!!!!!!!                  physics: const ScrollPhysics(),
                   child: StreamBuilder<SkillsState>(
                       stream: skillsBloc.stream,
                       builder: (context, AsyncSnapshot<SkillsState> snapshot) {

@@ -7,7 +7,7 @@ import 'package:app_masterclass/app/about/services/about_service/about_service.d
 
 class AboutBloc {
   final IAboutService _aboutService;
-
+//TODO tentar fazer tudo com um so bloc
   final StreamController<AboutEvent> _inputAboutController =
       StreamController<AboutEvent>.broadcast();
   final StreamController<AboutState> _outputAboutController =
