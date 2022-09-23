@@ -20,6 +20,7 @@ class _CardAboutWidgetState extends State<CardAboutWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.all(14.0),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(25)),
         color: Theme.of(context).cardColor,
