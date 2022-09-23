@@ -1,15 +1,15 @@
-import 'package:app_masterclass/app/about/dependencies/dependency_injection.dart';
-import 'package:app_masterclass/app/repositories/presenter/dependencies/repository_dependencies.dart';
+import 'package:app_masterclass/app/home/tabs/about/dependencies/dependency_injection.dart';
+import 'package:app_masterclass/app/home/tabs/repositories/presenter/dependencies/repository_dependencies.dart';
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:app_masterclass/app/about/about_page.dart';
-import 'package:app_masterclass/app/activities/activities_page.dart';
-import 'package:app_masterclass/app/repositories/presenter/pages/repositories_page.dart';
+import 'package:app_masterclass/app/home/tabs/about/about_page.dart';
+import 'package:app_masterclass/app/home/tabs/activities/activities_page.dart';
+import 'package:app_masterclass/app/home/tabs/repositories/presenter/pages/repositories_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
