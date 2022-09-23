@@ -17,12 +17,17 @@ class _MyAppWidgetState extends State<MyAppWidget> {
     return ThemeController(
       toggle: _changeTheme,
       child: MaterialApp(
-        // builder: (context, child) {//TODO!
-        //   return SafeArea(child: null,);
-        // },
+        builder: (context, routesChild) {
+          return SafeArea(
+            child: routesChild!,
+          );
+        },
         theme: _themeIsDark ? _darkTheme : _lightTheme,
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const HomePage(),
+        },
       ),
     );
   }
