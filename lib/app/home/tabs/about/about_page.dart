@@ -38,7 +38,7 @@ class _AboutPageState extends State<AboutPage> {
           stream: aboutBloc.stream,
           builder: (context, AsyncSnapshot<AboutState> snapshot) {
             final dev = snapshot.data?.devModel ??
-                DevModel(avatar_url: '', name: '', bio: '', blog: '');
+                DevModel(avatarUrl: '', name: '', bio: '', blog: '');
 
             if (dev.blog.isNotEmpty) {
               skillsBloc.inputSkills.add(LoadSkillsEvent(devModel: dev));
@@ -46,7 +46,8 @@ class _AboutPageState extends State<AboutPage> {
             return Padding(
                 padding: const EdgeInsets.only(left: 14.0, right: 14.0),
                 child: SingleChildScrollView(
-                  //TODO! fix this!!!!!!!                  physics: const ScrollPhysics(),
+                  //TODO! fix this!!!!!!!
+                  physics: const ScrollPhysics(),
                   child: StreamBuilder<SkillsState>(
                       stream: skillsBloc.stream,
                       builder: (context, AsyncSnapshot<SkillsState> snapshot) {
@@ -60,7 +61,7 @@ class _AboutPageState extends State<AboutPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             CardAboutWidget(
-                              urlImage: dev.avatar_url,
+                              urlImage: dev.avatarUrl,
                               userName: dev.name,
                               bio: dev.bio,
                             ),

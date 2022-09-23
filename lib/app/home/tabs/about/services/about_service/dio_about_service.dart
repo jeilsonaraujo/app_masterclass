@@ -8,6 +8,6 @@ class DioAboutService extends IAboutService {
     var dio = Dio();
     final response = await dio.get('https://api.github.com/users/$userName');
 
-    return DevModel.fromMap(response.data);
+    return DevModel.fromJson(response.data);
   }
 }
