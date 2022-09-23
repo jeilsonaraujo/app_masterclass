@@ -1,9 +1,9 @@
-import 'package:app_masterclass/app/about/dependencies/about_injections.dart';
-import 'package:app_masterclass/app/about/blocs/bloc_about/about_bloc.dart';
-import 'package:app_masterclass/app/about/blocs/bloc_skills/skills_bloc.dart';
-import 'package:app_masterclass/app/about/services/about_service/dio_about_service.dart';
-import 'package:app_masterclass/app/about/services/skills_service/dio_skills_service.dart';
-import 'package:app_masterclass/app/about/dependencies/skills_injection.dart';
+import 'package:app_masterclass/app/home/tabs/about/dependencies/about_injections.dart';
+import 'package:app_masterclass/app/home/tabs/about/blocs/bloc_about/about_bloc.dart';
+import 'package:app_masterclass/app/home/tabs/about/blocs/bloc_skills/skills_bloc.dart';
+import 'package:app_masterclass/app/home/tabs/about/services/about_service/dio_about_service.dart';
+import 'package:app_masterclass/app/home/tabs/about/services/skills_service/dio_skills_service.dart';
+import 'package:app_masterclass/app/home/tabs/about/dependencies/skills_injection.dart';
 import 'package:flutter/material.dart';
 
 class DependencyInjection extends InheritedWidget {

@@ -1,5 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:app_masterclass/app/repositories/domain/entities/gitrepo.dart';
+import 'package:app_masterclass/app/home/tabs/repositories/domain/entities/gitrepo.dart';
 
 abstract class RepositoryState {
   List<GitRepo> repos;

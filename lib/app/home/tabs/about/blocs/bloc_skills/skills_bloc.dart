@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:app_masterclass/app/about/blocs/bloc_skills/skills_events.dart';
-import 'package:app_masterclass/app/about/blocs/bloc_skills/skills_state.dart';
-import 'package:app_masterclass/app/about/models/dev_skills_model.dart';
-import 'package:app_masterclass/app/about/services/skills_service/skills_service.dart';
+import 'package:app_masterclass/app/home/tabs/about/blocs/bloc_skills/skills_events.dart';
+import 'package:app_masterclass/app/home/tabs/about/blocs/bloc_skills/skills_state.dart';
+import 'package:app_masterclass/app/home/tabs/about/models/dev_skills_model.dart';
+import 'package:app_masterclass/app/home/tabs/about/services/skills_service/skills_service.dart';
 
 class SkillsBloc {
   final ISkillsService _skillsService;

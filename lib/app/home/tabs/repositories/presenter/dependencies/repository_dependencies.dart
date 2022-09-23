@@ -1,5 +1,5 @@
-import 'package:app_masterclass/app/repositories/domain/usecases/get_posts.dart';
-import 'package:app_masterclass/app/repositories/presenter/dependencies/repo_injections.dart';
+import 'package:app_masterclass/app/home/tabs/repositories/domain/usecases/get_posts.dart';
+import 'package:app_masterclass/app/home/tabs/repositories/presenter/dependencies/repo_injections.dart';
 import 'package:flutter/material.dart';
 import 'package:uno/uno.dart';
 

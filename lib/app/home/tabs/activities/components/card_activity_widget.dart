@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:app_masterclass/app/activities/components/card_activity_widget/content_card_activity_widget.dart';
-import 'package:app_masterclass/app/activities/components/card_activity_widget/footer_card_activity_widget.dart';
-import 'package:app_masterclass/app/activities/components/card_activity_widget/header_card_activity_widget.dart';
+import 'package:app_masterclass/app/home/tabs/activities/components/card_activity_widget/content_card_activity_widget.dart';
+import 'package:app_masterclass/app/home/tabs/activities/components/card_activity_widget/footer_card_activity_widget.dart';
+import 'package:app_masterclass/app/home/tabs/activities/components/card_activity_widget/header_card_activity_widget.dart';
 
 class CardActivityWidget extends StatefulWidget {
   final Widget icon;

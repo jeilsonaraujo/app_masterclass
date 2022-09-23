@@ -1,5 +1,5 @@
-import 'package:app_masterclass/app/repositories/external/datasources/commits_gitrepo_datasource.dart';
-import 'package:app_masterclass/app/repositories/infra/adapters/commits_gitrepo_adapter.dart';
+import 'package:app_masterclass/app/home/tabs/repositories/external/datasources/commits_gitrepo_datasource.dart';
+import 'package:app_masterclass/app/home/tabs/repositories/infra/adapters/commits_gitrepo_adapter.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:uno/uno.dart';
 

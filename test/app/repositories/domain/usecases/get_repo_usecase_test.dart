@@ -1,6 +1,6 @@
-import 'package:app_masterclass/app/repositories/domain/entities/gitrepo.dart';
-import 'package:app_masterclass/app/repositories/domain/repositories/gitrepo_repository.dart';
-import 'package:app_masterclass/app/repositories/domain/usecases/get_posts.dart';
+import 'package:app_masterclass/app/home/tabs/repositories/domain/entities/gitrepo.dart';
+import 'package:app_masterclass/app/home/tabs/repositories/domain/repositories/gitrepo_repository.dart';
+import 'package:app_masterclass/app/home/tabs/repositories/domain/usecases/get_posts.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:mocktail/mocktail.dart';

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:app_masterclass/components/header_page_widget.dart';
-import 'package:app_masterclass/app/activities/details_page/details_page.dart';
-import 'package:app_masterclass/app/activities/components/card_activity_widget.dart';
+import 'package:app_masterclass/app/home/tabs/activities/details_page/details_page.dart';
+import 'package:app_masterclass/app/home/tabs/activities/components/card_activity_widget.dart';
 
 class ActivitiesPage extends StatefulWidget {
   const ActivitiesPage({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:async';
 
-import 'package:app_masterclass/app/repositories/presenter/bloc/repository_state.dart';
+import 'package:app_masterclass/app/home/tabs/repositories/presenter/bloc/repository_state.dart';
 
 import '../../domain/usecases/get_posts.dart';
 import 'repository_events.dart';

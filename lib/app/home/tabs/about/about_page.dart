@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import 'package:app_masterclass/app/about/models/dev_model.dart';
+import 'package:app_masterclass/app/home/tabs/about/models/dev_model.dart';
 import 'package:app_masterclass/components/header_page_widget.dart';
-import 'package:app_masterclass/app/about/components/skills_widget.dart';
-import 'package:app_masterclass/app/about/components/card_about_widget.dart';
-import 'package:app_masterclass/app/about/blocs/bloc_about/about_state.dart';
-import 'package:app_masterclass/app/about/blocs/bloc_about/about_events.dart';
-import 'package:app_masterclass/app/about/blocs/bloc_skills/skills_state.dart';
-import 'package:app_masterclass/app/about/blocs/bloc_skills/skills_events.dart';
-import 'package:app_masterclass/app/about/dependencies/dependency_injection.dart';
-import 'package:app_masterclass/app/about/components/favorite_tecnologies_list.dart';
+import 'package:app_masterclass/app/home/tabs/about/components/skills_widget.dart';
+import 'package:app_masterclass/app/home/tabs/about/components/card_about_widget.dart';
+import 'package:app_masterclass/app/home/tabs/about/blocs/bloc_about/about_state.dart';
+import 'package:app_masterclass/app/home/tabs/about/blocs/bloc_about/about_events.dart';
+import 'package:app_masterclass/app/home/tabs/about/blocs/bloc_skills/skills_state.dart';
+import 'package:app_masterclass/app/home/tabs/about/blocs/bloc_skills/skills_events.dart';
+import 'package:app_masterclass/app/home/tabs/about/dependencies/dependency_injection.dart';
+import 'package:app_masterclass/app/home/tabs/about/components/favorite_tecnologies_list.dart';
 
 class AboutPage extends StatefulWidget {
   const AboutPage({Key? key}) : super(key: key);
