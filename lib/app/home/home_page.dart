@@ -61,6 +61,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 const Tab(
+                  //TODO put a separator here
                   //text: "Repositórios",
                   icon: Padding(
                     padding: EdgeInsets.only(left: 22.0, right: 22),
