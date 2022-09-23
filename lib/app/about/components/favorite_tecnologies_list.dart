@@ -2,9 +2,9 @@ import 'package:app_masterclass/app/about/components/favorite_tecnology_widget.d
 import 'package:app_masterclass/app/about/models/favorite_tecnologies_model.dart';
 import 'package:flutter/material.dart';
 
-class RollerFavoriteTecnologies extends StatelessWidget {
+class FavoriteTecnologiesList extends StatelessWidget {
   final List<FavoriteTecnologyModel> favoritesTecnologies;
-  const RollerFavoriteTecnologies(
+  const FavoriteTecnologiesList(
       {super.key, required this.favoritesTecnologies});
 
   @override

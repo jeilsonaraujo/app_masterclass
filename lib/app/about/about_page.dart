@@ -9,7 +9,7 @@ import 'package:app_masterclass/app/about/blocs/bloc_about/about_events.dart';
 import 'package:app_masterclass/app/about/blocs/bloc_skills/skills_state.dart';
 import 'package:app_masterclass/app/about/blocs/bloc_skills/skills_events.dart';
 import 'package:app_masterclass/app/about/dependencies/dependency_injection.dart';
-import 'package:app_masterclass/app/about/components/roller_favorite_tecnologies.dart';
+import 'package:app_masterclass/app/about/components/favorite_tecnologies_list.dart';
 
 class AboutPage extends StatefulWidget {
   const AboutPage({Key? key}) : super(key: key);
@@ -64,7 +64,7 @@ class _AboutPageState extends State<AboutPage> {
                               userName: dev.name,
                               bio: dev.bio,
                             ),
-                            RollerFavoriteTecnologies(
+                            FavoriteTecnologiesList(
                                 favoritesTecnologies: favoritesTecnologies),
                             SkilsWidget(skills: skillsList),
                           ],
