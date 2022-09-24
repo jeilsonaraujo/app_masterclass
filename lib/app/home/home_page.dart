@@ -60,22 +60,24 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                const Tab(
+                Tab(
                   //TODO put a separator here
                   //text: "Repositórios",
                   icon: Padding(
-                    padding: EdgeInsets.only(left: 22.0, right: 22),
+                    padding: const EdgeInsets.only(left: 22.0, right: 22),
                     child: Icon(
                       FontAwesomeIcons.github,
+                      color: Theme.of(context).indicatorColor,
                       size: 40,
                     ),
                   ),
                 ),
-                const Tab(
+                Tab(
                   icon: Padding(
-                    padding: EdgeInsets.only(left: 22.0, right: 22),
+                    padding: const EdgeInsets.only(left: 22.0, right: 22),
                     child: Icon(
                       Icons.person,
+                      color: Theme.of(context).indicatorColor,
                       size: 40,
                     ),
                   ),
