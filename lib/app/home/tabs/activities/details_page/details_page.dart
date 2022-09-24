@@ -19,7 +19,6 @@ class DetailsPage extends StatelessWidget {
           isDetailPage: true,
         ),
         body: ListView.builder(
-          //todo fix it can't change theme here
           itemCount: amountOfExercises,
           itemBuilder: (context, index) {
             return Container(
