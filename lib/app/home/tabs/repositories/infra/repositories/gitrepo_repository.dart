@@ -23,10 +23,12 @@ class GitRepoRepository extends IGitRepoRepository {
     late ICommitsGitRepoDatasource commitGitRepoDatasource;
     late IStarsGitRepoDatasource starGitRepoDatasource;
     try {
-      final list = await gitrepoDatasource.getRepos();
+      final list = await gitrepoDatasource
+          .getRepos(); //todo this will return only a list of repos
 
       final reposList = list.map(GitRepoAdapter.fromJson).toList();
       for (int repo = 0; repo < 5; repo++) {
+        // todo late pass the list returned of repos to get the commit of each repo
 //commits
 
         commitGitRepoDatasource = CommitsGitRepoDatasource(
@@ -43,6 +45,7 @@ class GitRepoRepository extends IGitRepoRepository {
 
 //stars
         starGitRepoDatasource = StarsGitRepoDatasource(
+            //todo do same this to get star of repos
             userName: 'decripter',
             repositoryName: reposList[repo].name,
             uno: Uno()); //TODO noa instanciar nada aqui, tudo via injecao
