@@ -16,25 +16,25 @@ void main() {
     "followers": 3,
   };
   test('shoud return user name [Jeilson Araujo]', () {
-    var dev = DevModel.fromMap(data);
+    var dev = DevModel.fromJson(data);
     expect(dev.name, 'Jeilson Araujo');
   });
 
   test('shoud return user bio [Always learning...]', () {
-    var dev = DevModel.fromMap(data);
+    var dev = DevModel.fromJson(data);
     expect(dev.bio, 'Always learning...\r\nCurrently Dart/Flutter');
   });
 
   test('shoud return url of avatar[https://avatars.githu...]', () {
-    var dev = DevModel.fromMap(data);
+    var dev = DevModel.fromJson(data);
     expect(
-        dev.avatar_url, 'https://avatars.githubusercontent.com/u/46649531?v=4');
+        dev.avatarUrl, 'https://avatars.githubusercontent.com/u/46649531?v=4');
   });
 
   test("shoud return data from github", () async {
     var dio = Dio();
     final response = await dio.get('https://api.github.com/users/decripter');
-    var dev = DevModel.fromMap(response.data);
+    var dev = DevModel.fromJson(response.data);
     expect(dev.name, 'Jeilson Araujo');
   });
 }

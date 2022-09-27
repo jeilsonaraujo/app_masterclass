@@ -14,7 +14,7 @@ void main() async {
       options: Options(
         headers: {
           "Content-Type": "application/json",
-          "x-hasura-admin-secret": HasuraKey.Key
+          "x-hasura-admin-secret": HasuraKey.key
         },
       ),
     );

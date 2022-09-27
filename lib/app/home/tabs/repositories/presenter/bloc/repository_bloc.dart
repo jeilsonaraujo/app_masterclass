@@ -3,7 +3,7 @@ import 'dart:async';
 
 import 'package:app_masterclass/app/home/tabs/repositories/presenter/bloc/repository_state.dart';
 
-import '../../domain/usecases/get_posts.dart';
+import '../../domain/usecases/get_repos.dart';
 import 'repository_events.dart';
 
 class BlocRepository {
