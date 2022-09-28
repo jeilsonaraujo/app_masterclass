@@ -1,3 +1,5 @@
 abstract class ICommitsGitRepoDatasource {
-  Future<List> getCommitsRepo();
+  Future<List> getCommitsRepo({
+    required repositoryName,
+  });
 }
