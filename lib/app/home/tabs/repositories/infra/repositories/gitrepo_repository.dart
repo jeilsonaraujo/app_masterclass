@@ -26,7 +26,11 @@ class GitRepoRepository extends IGitRepoRepository {
       final list = await gitrepoDatasource.getRepos();
 
       final nameReposList = list.map(GitRepoInfraModel.fromJson).toList();
-      const limitOfReposToFetchData = 5;
+
+      var limitOfReposToFetchData = 5;
+      if (nameReposList.length < 5) {
+        limitOfReposToFetchData = nameReposList.length;
+      }
       //without token the github's api has a limit of 60 interactions
       final List<GitRepo> gitRepositories = [];
       for (int actualLoopRepo = 0;
