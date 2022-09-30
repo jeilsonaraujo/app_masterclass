@@ -3,10 +3,6 @@ import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'answers/repos_answer.dart';
-import 'answers/commits_answer.dart';
-import 'answers/stars_answer.dart';
-
 import 'gitrepo_repository_test.mocks.dart';
 
 import 'package:app_masterclass/app/home/tabs/repositories/domain/entities/gitrepo.dart';
@@ -27,15 +23,15 @@ void main() {
       commitGitRepoDatasource: commitsDatasource,
       starGitRepoDatasource: starsDatasource);
   test("should return a list of List<GitRepo>", () async {
-    when(repoDatasource.getRepos()).thenAnswer((_) async => reposAnswer);
+    when(repoDatasource.getRepos()).thenAnswer((_) async => <dynamic>[]);
 
     when(commitsDatasource.getCommitsRepo(
-            repositoryName: 'animacoes_expansion_tile'))
-        .thenAnswer((_) async => commitsAnswer);
+            repositoryName: anyNamed('repositoryName')))
+        .thenAnswer((_) async => <dynamic>[]);
 
     when(starsDatasource.getStarsRepo(
-            repositoryName: 'animacoes_expansion_tile'))
-        .thenAnswer((_) async => starAnswer);
+            repositoryName: anyNamed('repositoryName')))
+        .thenAnswer((_) async => <dynamic>[]);
 
     final result = await repository.getRepos();
 
