@@ -21,7 +21,8 @@ class GitRepoRepository extends IGitRepoRepository {
   });
 
   @override
-  Future<Either<IGitRepoException, List<GitRepo>>> getRepos() async {
+  Future<Either<IGitRepoException, List<GitRepo>>> getRepos(
+      {required String userName}) async {
     try {
       final list = await gitrepoDatasource.getRepos();
 
@@ -43,7 +44,7 @@ class GitRepoRepository extends IGitRepoRepository {
 //commits
 
         var resultCommits = await commitGitRepoDatasource.getCommitsRepo(
-            repositoryName: repositoryName);
+            userName: userName, repositoryName: repositoryName);
         int commitsAmount = resultCommits.length;
 
 //stars

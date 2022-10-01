@@ -46,12 +46,18 @@ class MockIGitRepoDatasource extends _i1.Mock
 class MockICommitsGitRepoDatasource extends _i1.Mock
     implements _i4.ICommitsGitRepoDatasource {
   @override
-  _i3.Future<List<dynamic>> getCommitsRepo({required dynamic repositoryName}) =>
+  _i3.Future<List<dynamic>> getCommitsRepo({
+    required String? userName,
+    required String? repositoryName,
+  }) =>
       (super.noSuchMethod(
         Invocation.method(
           #getCommitsRepo,
           [],
-          {#repositoryName: repositoryName},
+          {
+            #userName: userName,
+            #repositoryName: repositoryName,
+          },
         ),
         returnValue: _i3.Future<List<dynamic>>.value(<dynamic>[]),
         returnValueForMissingStub: _i3.Future<List<dynamic>>.value(<dynamic>[]),

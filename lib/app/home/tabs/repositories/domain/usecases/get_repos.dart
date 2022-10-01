@@ -5,7 +5,8 @@ import '../errors/errors.dart';
 import '../repositories/gitrepo_repository.dart';
 
 abstract class IGetGitRepos {
-  Future<Either<IGitRepoException, List<GitRepo>>> call();
+  Future<Either<IGitRepoException, List<GitRepo>>> call(
+      {required String userName});
 }
 
 class GetGitRepo implements IGetGitRepos {
@@ -14,7 +15,8 @@ class GetGitRepo implements IGetGitRepos {
   GetGitRepo(this.repository);
 
   @override
-  Future<Either<IGitRepoException, List<GitRepo>>> call() async {
-    return await repository.getRepos();
+  Future<Either<IGitRepoException, List<GitRepo>>> call(
+      {required String userName}) async {
+    return await repository.getRepos(userName: userName);
   }
 }

@@ -26,14 +26,14 @@ void main() {
     when(repoDatasource.getRepos()).thenAnswer((_) async => <dynamic>[]);
 
     when(commitsDatasource.getCommitsRepo(
-            repositoryName: anyNamed('repositoryName')))
+            userName: 'userName', repositoryName: anyNamed('repositoryName')))
         .thenAnswer((_) async => <dynamic>[]);
 
     when(starsDatasource.getStarsRepo(
             repositoryName: anyNamed('repositoryName')))
         .thenAnswer((_) async => <dynamic>[]);
 
-    final result = await repository.getRepos();
+    final result = await repository.getRepos(userName: 'userName');
 
     expect(result.fold(id, id), isA<List<GitRepo>>());
   });

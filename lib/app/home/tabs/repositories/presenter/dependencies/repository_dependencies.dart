@@ -17,8 +17,7 @@ class RepositoryDependency extends InheritedWidget {
       GetGitRepo(
         GitRepoRepository(
             gitrepoDatasource: GitRepoDatasource(Uno(), userName: 'Decripter'),
-            commitGitRepoDatasource:
-                CommitsGitRepoDatasource(uno: Uno(), userName: 'Decripter'),
+            commitGitRepoDatasource: CommitsGitRepoDatasource(uno: Uno()),
             starGitRepoDatasource:
                 StarsGitRepoDatasource(uno: Uno(), userName: 'Decripter')),
       ),

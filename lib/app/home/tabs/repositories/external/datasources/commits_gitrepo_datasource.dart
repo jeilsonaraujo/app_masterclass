@@ -4,16 +4,15 @@ import '../../domain/errors/errors.dart';
 import '../../infra/datasources/commits_gitrepo_datasource.dart';
 
 class CommitsGitRepoDatasource implements ICommitsGitRepoDatasource {
-  final String userName;
   final Uno uno;
 
   CommitsGitRepoDatasource({
-    required this.userName,
     required this.uno,
   });
 
   @override
   Future<List> getCommitsRepo({
+    required userName,
     required repositoryName,
   }) async {
     try {
