@@ -26,7 +26,14 @@ class AboutBloc {
     if (event is LoadAboutEvent) {
       devModel = await _aboutService.getGitHubUser(userName: event.userName);
     } else {
-      devModel = DevModel(avatarUrl: '', name: '', bio: '', blog: '');
+      devModel = DevModel(
+          avatarUrl: '',
+          name: '',
+          bio: '',
+          blog: '',
+          socialMedia: [],
+          favoritesTecnologies: [],
+          skills: []);
     }
     _outputAboutController.add(SuccessAboutState(devModel: devModel));
   }

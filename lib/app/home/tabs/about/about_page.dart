@@ -38,7 +38,14 @@ class _AboutPageState extends State<AboutPage> {
           stream: aboutBloc.stream,
           builder: (context, AsyncSnapshot<AboutState> snapshot) {
             final dev = snapshot.data?.devModel ??
-                DevModel(avatarUrl: '', name: '', bio: '', blog: '');
+                DevModel(
+                    avatarUrl: '',
+                    name: '',
+                    bio: '',
+                    blog: '',
+                    socialMedia: [],
+                    favoritesTecnologies: [],
+                    skills: []);
 
             if (dev.blog.isNotEmpty) {
               skillsBloc.inputSkills.add(LoadSkillsEvent(devModel: dev));
