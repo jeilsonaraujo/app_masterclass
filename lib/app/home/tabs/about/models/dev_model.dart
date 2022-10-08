@@ -1,5 +1,4 @@
 class DevModel {
-  //todo this should represent the entire page, so this must have more propriets like skillsList and favoriteTecnologiesList
   final String avatarUrl;
   final String name;
   final String bio;
