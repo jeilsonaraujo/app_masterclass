@@ -1,5 +1,5 @@
 class SocialMedia {
-  //todo to implement on AboutModel
+  //TODO to implement on AboutModel
   final String name;
   final String logoUrl;
 
