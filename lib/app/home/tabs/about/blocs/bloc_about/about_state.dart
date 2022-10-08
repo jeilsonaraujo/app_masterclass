@@ -1,14 +1,14 @@
-import 'package:app_masterclass/app/home/tabs/about/models/dev_model.dart';
+import 'package:app_masterclass/app/home/tabs/about/models/about_model.dart';
 
 abstract class AboutState {
-  DevModel devModel;
-  AboutState({required this.devModel});
+  AboutModel aboutModel;
+  AboutState({required this.aboutModel});
 }
 
 class InitialAboutState extends AboutState {
-  InitialAboutState({required super.devModel});
+  InitialAboutState({required super.aboutModel});
 }
 
 class SuccessAboutState extends AboutState {
-  SuccessAboutState({required devModel}) : super(devModel: devModel);
+  SuccessAboutState({required aboutModel}) : super(aboutModel: aboutModel);
 }
