@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:app_masterclass/app/home/tabs/about/about_page.dart';
+import 'package:app_masterclass/app/home/tabs/about/view/about_page.dart';
 import 'package:app_masterclass/app/home/tabs/activities/activities_page.dart';
 import 'package:app_masterclass/app/home/tabs/repositories/presenter/pages/repositories_page.dart';
 

@@ -1,3 +1,5 @@
+// ignore_for_file: null_argument_to_non_null_type
+
 import 'package:uno/uno.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
@@ -13,6 +15,6 @@ final commitsDatasource = CommitsGitRepoDatasource(uno: unoMock);
 
 void main() {
   test('Should return a list of data', () async {
-    when(unoMock.get('')).thenReturn(new Future.value());
+    when(unoMock.get('')).thenReturn(Future.value());
   });
 }
