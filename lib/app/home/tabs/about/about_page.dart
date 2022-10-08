@@ -4,10 +4,11 @@ import 'package:app_masterclass/app/home/tabs/about/models/dev_model.dart';
 import 'package:app_masterclass/components/header_page_widget.dart';
 import 'package:app_masterclass/app/home/tabs/about/components/skills_widget.dart';
 import 'package:app_masterclass/app/home/tabs/about/components/card_about_widget.dart';
-import 'package:app_masterclass/app/home/tabs/about/blocs/bloc_about/about_state.dart';
-import 'package:app_masterclass/app/home/tabs/about/blocs/bloc_about/about_events.dart';
 import 'package:app_masterclass/app/home/tabs/about/dependencies/dependency_injection.dart';
 import 'package:app_masterclass/app/home/tabs/about/components/favorite_tecnologies_list.dart';
+
+import 'blocs/about_events.dart';
+import 'blocs/about_state.dart';
 
 class AboutPage extends StatefulWidget {
   const AboutPage({Key? key}) : super(key: key);
