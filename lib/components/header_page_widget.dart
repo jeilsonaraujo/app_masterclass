@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:app_masterclass/app/theme_controller.dart';
 
+// ignore: must_be_immutable
 class HeaderPageWidget extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   bool isDetailPage;
@@ -12,7 +13,7 @@ class HeaderPageWidget extends StatelessWidget implements PreferredSizeWidget {
     required this.title,
     this.isDetailPage = false,
   });
-  final double height = 120.0;
+  final double height = 90.0;
   @override
   Widget build(BuildContext context) {
     final controller =
@@ -22,7 +23,7 @@ class HeaderPageWidget extends StatelessWidget implements PreferredSizeWidget {
         Padding(
           padding: const EdgeInsets.only(left: 15, right: 15),
           child: SizedBox(
-            height: 92,
+            height: 70,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -77,7 +78,7 @@ class HeaderPageWidget extends StatelessWidget implements PreferredSizeWidget {
             ),
           ),
         ),
-        SizedBox(height: 27)
+        const SizedBox(height: 20)
       ],
     );
   }
