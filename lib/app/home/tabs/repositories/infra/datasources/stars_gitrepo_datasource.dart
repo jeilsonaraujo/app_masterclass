@@ -1,3 +1,3 @@
 abstract class IStarsGitRepoDatasource {
-  Future<List> getStarsRepo();
+  Future<List> getStarsRepo({required String repositoryName});
 }

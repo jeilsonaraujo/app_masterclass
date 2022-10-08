@@ -4,5 +4,6 @@ import '../entities/gitrepo.dart';
 import '../errors/errors.dart';
 
 abstract class IGitRepoRepository {
-  Future<Either<IGitRepoException, List<GitRepo>>> getRepos();
+  Future<Either<IGitRepoException, List<GitRepo>>> getRepos(
+      {required String userName});
 }

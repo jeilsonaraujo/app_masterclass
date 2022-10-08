@@ -3,6 +3,7 @@ class DevModel {
   final String name;
   final String bio;
   final String blog;
+
   DevModel({
     required this.avatarUrl,
     required this.name,

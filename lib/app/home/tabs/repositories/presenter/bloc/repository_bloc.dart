@@ -23,7 +23,7 @@ class BlocRepository {
 
   void _mapEventToState(RepositoryEvents event) async {
     if (event is LoadRepositoryEvent) {
-      final result = await _repositoryRepo.call();
+      final result = await _repositoryRepo(userName: 'decripter');
 
       result.fold((l) {}, (r) {
         _outputRepoontroller.add(SuccessGitRepoState(repos: r));

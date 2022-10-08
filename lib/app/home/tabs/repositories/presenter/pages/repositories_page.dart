@@ -27,15 +27,19 @@ class _RepositoriesPageState extends State<RepositoriesPage> {
           stream: repoBloc.stream,
           builder: (context, AsyncSnapshot<RepositoryState> snapshot) {
             final reposList = snapshot.data?.repos ?? [];
-            return ListView.builder(
-                itemCount: reposList.length,
-                itemBuilder: (context, index) {
-                  return CardRepositoryWidget(
-                    repositoryName: reposList[index].name,
-                    repositoryCommits: reposList[index].commits,
-                    repositoryStars: reposList[index].stars,
-                  );
-                });
+            if (reposList.isNotEmpty) {
+              return ListView.builder(
+                  itemCount: reposList.length,
+                  itemBuilder: (context, index) {
+                    return CardRepositoryWidget(
+                      repositoryName: reposList[index].name,
+                      repositoryCommits: reposList[index].commits,
+                      repositoryStars: reposList[index].stars,
+                    );
+                  });
+            } else {
+              return const Center(child: CircularProgressIndicator());
+            }
           },
         ));
   }

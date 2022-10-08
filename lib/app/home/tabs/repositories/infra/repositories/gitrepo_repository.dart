@@ -1,59 +1,65 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:fpdart/fpdart.dart';
-import 'package:uno/uno.dart';
 
 import '../../domain/entities/gitrepo.dart';
 import '../../domain/errors/errors.dart';
 import '../../domain/repositories/gitrepo_repository.dart';
-import '../../external/datasources/commits_gitrepo_datasource.dart';
-import '../../external/datasources/stars_gitrepo_datasource.dart';
-import '../adapters/commits_gitrepo_adapter.dart';
-import '../adapters/gitrepo_adapter.dart';
-import '../adapters/stars_gitrepo_adapter.dart';
 import '../datasources/commits_gitrepo_datasource.dart';
 import '../datasources/gitrepo_datasource.dart';
 import '../datasources/stars_gitrepo_datasource.dart';
+import '../models/gitrepo_infra_model.dart';
 
 class GitRepoRepository extends IGitRepoRepository {
   final IGitRepoDatasource gitrepoDatasource;
+  final ICommitsGitRepoDatasource commitGitRepoDatasource;
+  final IStarsGitRepoDatasource starGitRepoDatasource;
 
-  GitRepoRepository(this.gitrepoDatasource);
+  GitRepoRepository({
+    required this.gitrepoDatasource,
+    required this.commitGitRepoDatasource,
+    required this.starGitRepoDatasource,
+  });
 
   @override
-  Future<Either<IGitRepoException, List<GitRepo>>> getRepos() async {
-    late ICommitsGitRepoDatasource commitGitRepoDatasource;
-    late IStarsGitRepoDatasource starGitRepoDatasource;
+  Future<Either<IGitRepoException, List<GitRepo>>> getRepos(
+      {required String userName}) async {
     try {
-      final list = await gitrepoDatasource
-          .getRepos(); //todo this will return only a list of repos
+      final list = await gitrepoDatasource.getRepos();
 
-      final reposList = list.map(GitRepoAdapter.fromJson).toList();
-      for (int repo = 0; repo < 5; repo++) {
-        // todo late pass the list returned of repos to get the commit of each repo
+      final nameReposList = list.map(GitRepoInfraModel.fromJson).toList();
+
+      var limitOfReposToFetchData = 5;
+      if (nameReposList.length < 5) {
+        limitOfReposToFetchData = nameReposList.length;
+      }
+      //without token the github's api has a limit of 60 interactions
+      final List<GitRepo> gitRepositories = [];
+      for (int actualLoopRepo = 0;
+          actualLoopRepo < limitOfReposToFetchData;
+          actualLoopRepo++) {
+//github repository name
+
+        String repositoryName = nameReposList[actualLoopRepo].toString();
+
 //commits
 
-        commitGitRepoDatasource = CommitsGitRepoDatasource(
-            //TODO!
-            userName: 'decripter',
-            repositoryName: reposList[repo].name,
-            uno: Uno());
-        var resultCommits = await commitGitRepoDatasource.getCommitsRepo();
-        var commitsList =
-            resultCommits.map(CommitsGitRepoAdapter.fromJson).toList();
-        // print(commitsList.length);
-
-        reposList[repo].commits = commitsList.length;
+        var resultCommits = await commitGitRepoDatasource.getCommitsRepo(
+            userName: userName, repositoryName: repositoryName);
+        int commitsAmount = resultCommits.length;
 
 //stars
-        starGitRepoDatasource = StarsGitRepoDatasource(
-            //todo do same this to get star of repos
-            userName: 'decripter',
-            repositoryName: reposList[repo].name,
-            uno: Uno()); //TODO noa instanciar nada aqui, tudo via injecao
-        var resultStars = await starGitRepoDatasource.getStarsRepo();
-        var starsList = resultStars.map(StarsGitRepoAdapter.fromJson).toList();
-        reposList[repo].stars = starsList.length;
+
+        var resultStars = await starGitRepoDatasource.getStarsRepo(
+            repositoryName: repositoryName);
+        int starsAmount = resultStars.length;
+
+        gitRepositories.add(GitRepo(
+          name: repositoryName,
+          commits: commitsAmount,
+          stars: starsAmount,
+        ));
       }
-      return right(reposList.sublist(0, 5));
+      return right(gitRepositories);
     } on IGitRepoException catch (e) {
       return left(e);
     }

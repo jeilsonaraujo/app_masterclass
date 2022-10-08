@@ -1,6 +1,7 @@
-import 'package:app_masterclass/app/home/tabs/about/components/favorite_tecnology_widget.dart';
 import 'package:app_masterclass/app/home/tabs/about/models/favorite_tecnologies_model.dart';
 import 'package:flutter/material.dart';
+
+import 'favorite_tecnology_widget.dart';
 
 class FavoriteTecnologiesList extends StatelessWidget {
   final List<FavoriteTecnologyModel> favoritesTecnologies;
