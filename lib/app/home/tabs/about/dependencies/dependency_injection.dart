@@ -3,7 +3,7 @@ import 'package:app_masterclass/app/home/tabs/about/services/about_service/dio_a
 import 'package:app_masterclass/app/home/tabs/about/services/skills_service/dio_skills_service.dart';
 import 'package:flutter/material.dart';
 
-import '../blocs/about_bloc.dart';
+import '../bloc/about_bloc.dart';
 
 class DependencyInjection extends InheritedWidget {
   DependencyInjection({super.key, required super.child});
