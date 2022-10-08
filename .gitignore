@@ -49,5 +49,6 @@ ios/
 android/
 macos/
 web/
-
+.fvm/
+.vscode/
 lib/security/

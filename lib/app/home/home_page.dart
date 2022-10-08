@@ -1,14 +1,15 @@
-import 'package:app_masterclass/app/about/dependencies/dependency_injection.dart';
+import 'package:app_masterclass/app/home/tabs/about/dependencies/dependency_injection.dart';
+import 'package:app_masterclass/app/home/tabs/repositories/presenter/dependencies/repository_dependencies.dart';
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:app_masterclass/app/about/about_page.dart';
-import 'package:app_masterclass/app/activities/activities_page.dart';
-import 'package:app_masterclass/app/repositories/repositories_page.dart';
+import 'package:app_masterclass/app/home/tabs/about/view/about_page.dart';
+import 'package:app_masterclass/app/home/tabs/activities/activities_page.dart';
+import 'package:app_masterclass/app/home/tabs/repositories/presenter/pages/repositories_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -17,7 +18,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Widget> tabsPages = [
     const ActivitiesPage(),
-    const RepositoriesPage(),
+    RepositoryDependency(child: const RepositoriesPage()),
     DependencyInjection(child: const AboutPage()),
   ];
 
@@ -59,21 +60,24 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                const Tab(
+                Tab(
+                  //TODO put a separator here
                   //text: "Repositórios",
                   icon: Padding(
-                    padding: EdgeInsets.only(left: 22.0, right: 22),
+                    padding: const EdgeInsets.only(left: 22.0, right: 22),
                     child: Icon(
                       FontAwesomeIcons.github,
+                      color: Theme.of(context).indicatorColor,
                       size: 40,
                     ),
                   ),
                 ),
-                const Tab(
+                Tab(
                   icon: Padding(
-                    padding: EdgeInsets.only(left: 22.0, right: 22),
+                    padding: const EdgeInsets.only(left: 22.0, right: 22),
                     child: Icon(
                       Icons.person,
+                      color: Theme.of(context).indicatorColor,
                       size: 40,
                     ),
                   ),
