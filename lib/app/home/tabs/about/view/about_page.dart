@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'package:app_masterclass/app/home/tabs/about/models/dev_model.dart';
 import 'package:app_masterclass/components/header_page_widget.dart';
-import 'package:app_masterclass/app/home/tabs/about/components/skills_widget.dart';
-import 'package:app_masterclass/app/home/tabs/about/components/card_about_widget.dart';
 import 'package:app_masterclass/app/home/tabs/about/dependencies/dependency_injection.dart';
-import 'package:app_masterclass/app/home/tabs/about/components/favorite_tecnologies_list.dart';
 
-import 'bloc/about_events.dart';
-import 'bloc/about_state.dart';
+import '../bloc/about_events.dart';
+import '../bloc/about_state.dart';
+import 'components/card_about_widget.dart';
+import 'components/favorite_tecnologies/favorite_tecnologies_list.dart';
+import 'components/skills/skills_widget.dart';
 
 class AboutPage extends StatefulWidget {
   const AboutPage({Key? key}) : super(key: key);
@@ -36,12 +36,7 @@ class _AboutPageState extends State<AboutPage> {
             stream: aboutBloc.stream,
             builder: (context, AsyncSnapshot<AboutState> snapshot) {
               final dev = snapshot.data?.aboutModel.devModel ??
-                  DevModel(
-                    avatarUrl: '',
-                    name: '',
-                    bio: '',
-                    blog: '',
-                  );
+                  DevModel(avatarUrl: '', name: '', bio: '', blog: '');
               final favoritesTecnologies =
                   snapshot.data?.aboutModel.favoriteTecnologies ?? [];
               final skills = snapshot.data?.aboutModel.skills ?? [];
@@ -51,11 +46,7 @@ class _AboutPageState extends State<AboutPage> {
                       child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CardAboutWidget(
-                        urlImage: dev.avatarUrl,
-                        userName: dev.name,
-                        bio: dev.bio,
-                      ),
+                      CardAboutWidget(devModel: dev),
                       FavoriteTecnologiesList(
                           favoritesTecnologies: favoritesTecnologies),
                       SkilsWidget(skills: skills),

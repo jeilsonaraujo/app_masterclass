@@ -1,15 +1,13 @@
+import 'package:app_masterclass/app/home/tabs/about/models/dev_model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CardAboutWidget extends StatefulWidget {
-  final String urlImage;
-  final String userName;
-  final String bio;
+  final DevModel devModel;
+
   const CardAboutWidget({
     super.key,
-    required this.urlImage,
-    required this.userName,
-    required this.bio,
+    required this.devModel,
   });
 
   @override
@@ -19,6 +17,10 @@ class CardAboutWidget extends StatefulWidget {
 class _CardAboutWidgetState extends State<CardAboutWidget> {
   @override
   Widget build(BuildContext context) {
+    final String avatarUrl = widget.devModel.avatarUrl;
+    final String name = widget.devModel.name;
+    final String bio = widget.devModel.bio;
+
     return Container(
       margin: const EdgeInsets.all(14.0),
       decoration: BoxDecoration(
@@ -32,7 +34,7 @@ class _CardAboutWidgetState extends State<CardAboutWidget> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              widget.urlImage.isNotEmpty
+              avatarUrl.isNotEmpty
                   ? Container(
                       width: 100,
                       height: 100,
@@ -42,9 +44,8 @@ class _CardAboutWidgetState extends State<CardAboutWidget> {
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(60),
-                        child: widget.urlImage.isNotEmpty
-                            ? Image.network(widget.urlImage,
-                                fit: BoxFit.contain)
+                        child: avatarUrl.isNotEmpty
+                            ? Image.network(avatarUrl, fit: BoxFit.contain)
                             : const CircularProgressIndicator(),
                       ),
                     )
@@ -66,7 +67,7 @@ class _CardAboutWidgetState extends State<CardAboutWidget> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  widget.userName,
+                  name,
                   style: const TextStyle(fontSize: 18),
                 ),
               ),
@@ -74,7 +75,7 @@ class _CardAboutWidgetState extends State<CardAboutWidget> {
                 padding:
                     const EdgeInsets.only(left: 23.0, right: 23, top: 15.0),
                 child: Text(
-                  widget.bio,
+                  bio,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontSize: 12,

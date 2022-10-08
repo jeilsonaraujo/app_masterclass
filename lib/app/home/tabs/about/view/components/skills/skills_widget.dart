@@ -1,6 +1,7 @@
-import 'package:app_masterclass/app/home/tabs/about/components/skill_item_widget.dart';
 import 'package:app_masterclass/app/home/tabs/about/models/skill_model.dart';
 import 'package:flutter/material.dart';
+
+import 'skill_item_widget.dart';
 
 class SkilsWidget extends StatelessWidget {
   final List<SkillModel> skills;

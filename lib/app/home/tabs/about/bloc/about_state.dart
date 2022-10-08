@@ -12,3 +12,4 @@ class InitialAboutState extends AboutState {
 class SuccessAboutState extends AboutState {
   SuccessAboutState({required aboutModel}) : super(aboutModel: aboutModel);
 }
+//todo add errorstate
